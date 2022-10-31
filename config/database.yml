@@ -4,6 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem "sqlite3"
 #
+# NOTE!!:
+# use different database in different environment, for example, for develop/test, use Sqlite3 and for production, use Postgres. You can set this using config/database.yml file.
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
