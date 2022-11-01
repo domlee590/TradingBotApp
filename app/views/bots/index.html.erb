@@ -1,3 +1,4 @@
+<!--  This file is app/views/movies/index.html.erb -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,22 +24,30 @@
     </div>
   </div>
 </nav>
+<h2>Your current bot configurations:</h2>
 
-<div>
-  <div class="mb-3">
-    <label for="formGroupExampleInput" class="form-label">Parameter 1</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-  </div>
-  <div class="mb-3">
-    <label for="formGroupExampleInput2" class="form-label">Parameter 2</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-  </div>
-  <div>
-    <label for="customRange1" class="form-label">Example range</label>
-    <input type="range" class="form-range" id="customRange1">
-  </div>
-</div>
-
-</body>
-
-</html>
+<table class="table table-striped col-md-12" id="movies">
+  <thead>
+  <tr>
+    <th>Bot Name</th>
+    <th>Date Created</th>
+    <th>More Info</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @bots.each do |bot| %>
+    <tr>
+      <td>
+        <%= bot.name %>
+      </td>
+      <td>
+        <%= bot.created_at %>
+      </td>
+      <td>
+        <%= link_to "More about #{bot.name}", bot_path(bot) %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new bot configuration', new_bot_path, class: 'btn btn-primary' %>
