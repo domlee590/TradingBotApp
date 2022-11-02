@@ -1,9 +1,9 @@
-When('I go to the TradingBotApp home page') do
-  visit '/'
+And(/^I click "([^"]*)"$/) do |arg|
+  click_link(arg)
 end
 
-And(/^I press "([^"]*)"$/) do |arg|
-  click_link(arg)
+When('I go to the TradingBotApp home page') do
+  visit '/'
 end
 
 Then /^(?:|I )go to (.+)$/ do |page_name|
