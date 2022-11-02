@@ -7,20 +7,21 @@
 # NOTE!!:
 # use different database in different environment, for example, for develop/test, use Sqlite3 and for production, use Postgres. You can set this using config/database.yml file.
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  #database: db/development.sqlite3
+  database: tradingbotapp_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: tradingbotapp_test
 
 production:
   <<: *default
