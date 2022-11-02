@@ -58,6 +58,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem 'rspec-rails'
   gem 'simplecov', :require => false
 end
 
