@@ -5,7 +5,6 @@ class CreateBots < ActiveRecord::Migration[7.0]
       t.integer :movingAverage1
       t.integer :movingAverage2
       t.boolean :short
-      t.datetime :created
       t.timestamps
     end
   end
