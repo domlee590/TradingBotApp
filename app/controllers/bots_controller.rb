@@ -20,8 +20,8 @@ class BotsController < ApplicationController
 
   def update
     @bot = Bot.find params[:id]
-    @bot.update_attributes!(bot_params)
-    flash[:notice] = "#{@bot.title} was successfully updated."
+    @bot.update!(bot_params)
+    flash[:notice] = "#{@bot.name} was successfully updated."
     redirect_to bot_path(@bot)
   end
 
