@@ -2,6 +2,11 @@ And(/^I click "([^"]*)"$/) do |arg|
   click_link(arg)
 end
 
+And(/^I press "([^"]*)"$/) do |arg|
+  click_button(arg)
+end
+
+
 When('I go to the TradingBotApp home page') do
   visit '/'
 end
@@ -19,4 +24,14 @@ Given /the following bots exist/ do |bots_table|
   bots_table.hashes.each do |bot|
     Bot.create bot
   end
+end
+
+When(/^I fill in "([^"])" with "([^"])"$/) do |arg1, arg2|
+  fill_in(arg1, :with => arg2)
+end
+
+Then /I should see "(.*)"/ do |e1|
+  #  ensure that that e1 occurs before e2.
+  #  page.body is the entire content of the page as a string.
+  expect(page.body.contains(e1))
 end
