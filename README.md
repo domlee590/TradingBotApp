@@ -23,3 +23,20 @@ To test, create a bot configuration and check if the bot is able to be seen in t
 
 PLEASE view the current rough draft for the bot implementation, which has been created in Python. The intention is to convert this to Ruby eventually and integrate it more with the rest of the app. It is a proof of concept.
 
+We tried to integrate the output in the following way, but couldn't get it working in time:
+
+class BotRunController < ApplicationController
+
+  def show
+    name = "bob"
+    ma1 = 1
+    ma2 = 48
+    short = "yes"
+
+    @ins = name + " " + ma1.to_s + " " + ma2.to_s + " " + short
+    @out = `python lib/assets/python/paperTrading.py "#{@ins}"`
+
+  end
+end
+
+This would render in a view. This will likely be working next iteration.
