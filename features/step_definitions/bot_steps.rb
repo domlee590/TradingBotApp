@@ -25,3 +25,7 @@ end
 Given /I am on the page Create Bot/ do
   visit new_bot_path
 end
+
+Then /I press "([^"]*)"$/ do |button|
+  click_button(button)
+end
