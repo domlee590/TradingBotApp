@@ -25,12 +25,6 @@ class BotsController < ApplicationController
     redirect_to bot_path(@bot)
   end
 
-  def destroy
-    @bot = Bot.find(params[:id])
-    @bot.destroy
-    flash[:notice] = "Bot '#{@bot.name}' deleted."
-    redirect_to bots_path
-  end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
