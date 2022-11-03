@@ -141,6 +141,12 @@
           null
         ]
       },
+      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bot_run_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bots_helper.rb": {
         "lines": [
           1,
@@ -263,8 +269,23 @@
         ],
         "branches": {
         }
+      },
+      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/bot_run_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1667443427
+    "timestamp": 1667446898
   }
 }

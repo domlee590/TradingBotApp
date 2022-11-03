@@ -4,6 +4,6 @@ class BotRunController < ApplicationController
     ma1 = 1
     ma2 = 48
     short = "yes"
-    @pythonbotrun = 'python lib/assets/paperTrading.py "#{name} #{ma1} #{ma2} #{short}"'
+    @pythonbotrun = `python3 lib/assets/paperTrading.py "#{name} #{ma1} #{ma2} #{short}"`
   end
 end
