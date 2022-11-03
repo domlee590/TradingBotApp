@@ -148,29 +148,6 @@
         "branches": {
         }
       },
-      "/Users/domlee590/Documents/Projects/TradingBotApp/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/domlee590/Documents/Projects/TradingBotApp/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/application_record.rb": {
         "lines": [
           0,
@@ -181,6 +158,6 @@
         }
       }
     },
-    "timestamp": 1667434033
+    "timestamp": 1667436641
   }
 }
