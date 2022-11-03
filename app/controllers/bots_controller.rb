@@ -5,7 +5,7 @@ class BotsController < ApplicationController
   end
 
   def index
-    @bots = Bot.all_movies
+    @bots = Bot.all_bots
   end
 
   def create

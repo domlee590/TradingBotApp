@@ -60,24 +60,17 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          null,
-          null,
+          1,
           1,
           1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
           null,
           null,
           1,
@@ -90,12 +83,19 @@
           1,
           0,
           0,
+          0,
+          0,
           null,
           null,
-          null,
-          1,
           1,
           0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -106,7 +106,7 @@
         "lines": [
           1,
           1,
-          1,
+          2,
           null,
           null
         ]
@@ -148,29 +148,6 @@
         "branches": {
         }
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/erikhansen/Downloads/TradingBotApp/app/models/application_record.rb": {
         "lines": [
           0,
@@ -181,6 +158,6 @@
         }
       }
     },
-    "timestamp": 1667436698
+    "timestamp": 1667437400
   }
 }

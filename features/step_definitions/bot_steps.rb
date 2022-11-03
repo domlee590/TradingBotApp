@@ -11,7 +11,6 @@ When('I go to the TradingBotApp home page') do
   visit '/'
 end
 
-#expect to be on the home page
 Then('I should be on the page {string}') do |string|
   expect(page).to have_title(string)
 end
@@ -26,12 +25,18 @@ Given /the following bots exist/ do |bots_table|
   end
 end
 
-When(/^I fill in "([^"])" with "([^"])"$/) do |arg1, arg2|
+When(/^I select "([^"]*)" from "([^"]*)"$/) do |arg1, arg2|
+  select(arg1, :from => arg2)
+end
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
   fill_in(arg1, :with => arg2)
 end
 
-Then /I should see "(.*)"/ do |e1|
-  #  ensure that that e1 occurs before e2.
-  #  page.body is the entire content of the page as a string.
-  expect(page.body.contains(e1))
+Then /^I should see "([^"]*)"$/ do |text|
+  expect(page).to have_content(text)
+end
+
+Given /I am on the page Create Bot/ do
+  visit new_bot_path
 end

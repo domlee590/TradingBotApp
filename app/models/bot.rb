@@ -1,5 +1,5 @@
 class Bot < ActiveRecord::Base
-  def self.all_movies
+  def self.all_bots
     all
   end
 end

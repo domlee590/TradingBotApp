@@ -14,6 +14,6 @@ Background: bots in database
 
 Scenario: edit moving average 1 to existing bot
   When I go to the edit page for Bot 1
-  And  I fill in "Moving Average 1" with 2
+  And I fill in "Moving Average 1" with "10"
   And  I press "Update Bot Info"
   Then the movingAverage1 of "Bot 1" should be 2
