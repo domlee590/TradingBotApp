@@ -32,7 +32,7 @@
   <%= label :bot, :movingAverage2, 'Moving Average 2', class: 'col-form-label' %>
   <%= text_field :bot, :movingAverage2, class: 'form-control' %>
   <%= label :bot, :short, 'Short', class: 'col-form-label' %>
-  <%= select :bot, :short, %w[Yes No], {}, { class: 'form-control col-1'} %>
+  <%= select :bot, :short, %w[true false], {}, { class: 'form-control col-1'} %>
   <br/>
   <%= submit_tag 'Update Bot Info', :class => 'btn btn-primary' %>
   <%= link_to 'Cancel', bots_path, :class => 'btn btn-secondary' %>
