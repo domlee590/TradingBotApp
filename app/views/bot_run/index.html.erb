@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>View Bot</title>
+  <title>Your Bots</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
@@ -23,31 +23,5 @@
     </div>
   </div>
 </nav>
-<ul id="details">
-  <li>
-    Name:
-    <%= @bot.name %>
-  </li>
-  <li>
-    Created At:
-    <%= @bot.created_at %>
-  </li>
-  <li>
-    Moving Average 1:
-    <%= @bot.movingAverage1%>
-  </li>
-  <li>
-    Moving Average 2:
-    <%= @bot.movingAverage2%>
-  </li>
-  <li>
-    Short?:
-    <%= @bot.short%>
-  </li>
-</ul>
-
-<div class="row">
-  <%= link_to 'Edit', edit_bot_path(@bot), class: 'btn btn-primary col-2' %>
-  <%= link_to 'Back to bot list', bots_path, class: 'btn btn-primary col-2' %>
-  <%= link_to 'View running bot output', bot_run_path, class: 'btn btn-primary col-2' %>
-</div>
+<h1>Here is your bot's output</h1>
+<p><%= @pythonbotrun %></p>
