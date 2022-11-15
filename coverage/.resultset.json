@@ -21,6 +21,12 @@
           null
         ]
       },
+      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bot_run_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bots_helper.rb": {
         "lines": [
           1,
@@ -60,36 +66,36 @@
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
           2,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
           null,
           null,
           null,
@@ -100,7 +106,7 @@
         "lines": [
           1,
           1,
-          1,
+          2,
           null,
           null
         ]
@@ -129,9 +135,24 @@
         ],
         "branches": {
         }
+      },
+      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/bot_run_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1667443431
+    "timestamp": 1668474927
   },
   "RSpec": {
     "coverage": {
@@ -286,6 +307,6 @@
         }
       }
     },
-    "timestamp": 1667446898
+    "timestamp": 1668474980
   }
 }
