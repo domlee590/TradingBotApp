@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/home_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
@@ -9,103 +9,109 @@
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/application_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/application_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bots_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/bot_run_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/create_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/bots_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/home_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/create_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/modify_bot_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/welcome_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/modify_bot_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/bots_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/bots_controller.rb": {
         "lines": [
           1,
           null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
           1,
           null,
           null,
           null,
           1,
           2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          1,
           2,
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/models/bot.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/bot.rb": {
         "lines": [
           1,
           1,
-          1,
+          2,
           null,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/channels/application_cable/channel.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -117,7 +123,7 @@
         "branches": {
         }
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/channels/application_cable/connection.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -131,47 +137,53 @@
         }
       }
     },
-    "timestamp": 1667443431
+    "timestamp": 1668552223
   },
   "RSpec": {
     "coverage": {
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/application_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/bots_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/bot_run_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/create_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/bots_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/home_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/create_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/modify_bot_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/helpers/welcome_helper.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/modify_bot_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/bots_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/bots_controller.rb": {
         "lines": [
           1,
           null,
@@ -216,13 +228,13 @@
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/application_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/controllers/home_controller.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/home_controller.rb": {
         "lines": [
           1,
           1,
@@ -230,7 +242,7 @@
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/models/bot.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/bot.rb": {
         "lines": [
           1,
           1,
@@ -239,7 +251,7 @@
           null
         ]
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/channels/application_cable/channel.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -251,7 +263,7 @@
         "branches": {
         }
       },
-      "/Users/erikhansen/Downloads/TradingBotApp/app/channels/application_cable/connection.rb": {
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -265,6 +277,6 @@
         }
       }
     },
-    "timestamp": 1667443427
+    "timestamp": 1668552234
   }
 }

@@ -10,7 +10,7 @@ README with
 
 (2) instructions to run and test your product.
 
-To run the app, simply start the rails server in the root directory of the project. You must have a properly configured Ruby on Rails environment to run the app, as well as a Postgres database, and have run rake db:migrate.
+To run the app, simply start the rails server in the root directory of the project. You must have a properly configured Ruby on Rails environment to run the app, as well as a Postgres database (please connect to your IDE or environment), and have run rake db:migrate.
 The app will be available at localhost:3000.
 To test, create a bot configuration and check if the bot is able to be seen in the list of bots, which can be done by clicking on the "Your Bots" link in the navigation bar.
 

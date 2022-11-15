@@ -16,7 +16,7 @@ Scenario: create a bot
   And I fill in "Bot Name" with "My Bot"
   And I fill in "Moving Average 1" with "10"
   And I fill in "Moving Average 2" with "20"
-  And I select "Yes" from "Short"
+  And I select "true" from "Short"
   And I press "Save Changes"
   Then I should be on the page "Your Bots"
   And I should see "My Bot"
