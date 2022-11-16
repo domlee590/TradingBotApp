@@ -20,6 +20,10 @@ Given('I am on the page Login') do
   visit "/login"
 end
 
+Given('I am on the page Your Bots') do
+  visit "/bots"
+end
+
 Given('I am on the page Sign Up') do
   visit new_user_path
 end

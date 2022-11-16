@@ -24,9 +24,12 @@
     </div>
   </div>
 </nav>
+<h2>Create a new bot here:</h2>
+<b>In this form, Bot name and Symbol are required.</b>
+Recommended: *Only input 3 of the technical indicators from EMA to VWAP*
 <%= form_tag bots_path, class: 'form' do %>
   <%= label :bot, :name, 'Bot Name', class: 'col-form-label' %>
-  <%= text_field :bot, :name, class: 'form-control' %>
+  <%= text_field :bot, :name, class: 'form-control', :required => true%>
   <%= label :bot, :ema, 'EMA', class: 'col-form-label' %>
   <%= text_field :bot, :ema, class: 'form-control' %>
   <%= label :bot, :bb, 'BB', class: 'col-form-label' %>
@@ -41,7 +44,7 @@
   <%= text_field :bot, :sar, class: 'form-control' %>
   <%= label :bot, :vwap, 'VWAP', class: 'col-form-label' %>
   <%= text_field :bot, :vwap, class: 'form-control' %>
-  <%= label :bot, :symbol, 'Symbol', class: 'col-form-label' %>
+  <%= label :bot, :symbol, 'Symbol', class: 'col-form-label', :required => true%>
   <%= text_field :bot, :symbol, class: 'form-control' %>
   <%= label :bot, :short, 'Short', class: 'col-form-label' %>
   <%= select :bot, :short, %w[true false], {}, { class: 'form-control col-1'} %>

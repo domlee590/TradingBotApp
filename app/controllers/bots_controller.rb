@@ -23,17 +23,6 @@ class BotsController < ApplicationController
     redirect_to bots_path
   end
 
-  def edit
-    @bot = Bot.find params[:id]
-  end
-
-  def update
-    @bot = Bot.find params[:id]
-    @bot.update!(bot_params)
-    flash[:notice] = "#{@bot.name} was successfully updated."
-    redirect_to bot_path(@bot)
-  end
-
 
   def show
     id = params[:id] # retrieve movie ID from URI route
