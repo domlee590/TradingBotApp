@@ -14,7 +14,7 @@ class BotsController < ApplicationController
   def create
     currentUserID = session[:user_id]
     currentUsername = User.find(currentUserID).username
-    puts(currentUsername)
+
     data = bot_params
     data[:username] = currentUsername
 
