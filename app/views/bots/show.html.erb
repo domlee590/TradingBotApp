@@ -33,22 +33,8 @@
     Created At:
     <%= @bot.created_at %>
   </li>
-  <li>
-    Moving Average 1:
-    <%= @bot.movingAverage1%>
-  </li>
-  <li>
-    Moving Average 2:
-    <%= @bot.movingAverage2%>
-  </li>
-  <li>
-    Short?:
-    <%= @bot.short%>
-  </li>
 </ul>
 
 <div class="row">
-  <%= link_to 'Edit', edit_bot_path(@bot), class: 'btn btn-primary col-2' %>
   <%= link_to 'Back to bot list', bots_path, class: 'btn btn-primary col-2' %>
-  <%= link_to 'View running bot output', bot_run_path, class: 'btn btn-primary col-2' %>
 </div>

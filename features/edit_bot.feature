@@ -7,7 +7,7 @@ I want to edit an existing trading bot configuration
 Background: bots in database
 
   Given the following bots exist:
-    | name        | movingAverage1 | movingAverage2     | short |
+    | name        | ema            | symbol             | short |
     | Bot 1       | 1              | 3                  |  true |
     | Bot 2       | 4              | 7                  | false |
     | Bot 3       | 5              | 6                  |  true |

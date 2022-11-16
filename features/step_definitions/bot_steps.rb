@@ -15,6 +15,10 @@ Then('I should be on the page {string}') do |string|
   expect(page).to have_title(string)
 end
 
+Given('I am on the page {string}') do |string|
+  visit "/login"
+end
+
 When ('I go to the edit page for Bot 1') do
   visit edit_bot_path(Bot.find_by_name("Bot 1"))
 end
@@ -26,6 +30,12 @@ end
 Given /the following bots exist/ do |bots_table|
   bots_table.hashes.each do |bot|
     Bot.create bot
+  end
+end
+
+Given /the following users exist/ do |user_table|
+  user_table.hashes.each do |user|
+    User.create user
   end
 end
 
