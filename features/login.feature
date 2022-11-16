@@ -13,14 +13,21 @@ Feature: login
       | User 3      | 54321           |
 
   Scenario: get to login page
-    When I go to the TradingBotApp home page
+    Given I am on the TradingBotApp home page
     And I click "Login"
     Then I should be on the page "Login"
 
-  Scenario: enter credentials and login
+  Scenario: enter valid credentials and login
     Given I am on the page Login
     And I fill in "username" with "User 1"
     And I fill in "password" with "123"
     And I press "Login"
     Then I should be on the page "Home"
     And I should see "User 1"
+
+  Scenario: enter invalid credentials
+    Given I am on the page Login
+    And I fill in "username" with "User 1"
+    And I fill in "password" with "12345"
+    And I press "Login"
+    Then I should be on the page "Login"

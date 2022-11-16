@@ -5,7 +5,7 @@ Feature: sign up
   I want to create an account
 
   Scenario: get to sign up page
-    When I go to the TradingBotApp home page
+    Given I am on the TradingBotApp home page
     And I click "Sign Up"
     Then I should be on the page "Sign Up"
 

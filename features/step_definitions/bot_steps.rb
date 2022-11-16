@@ -8,7 +8,7 @@ And(/^I press "([^"]*)"$/) do |arg|
 end
 
 
-When('I go to the TradingBotApp home page') do
+Given('I am on the TradingBotApp home page') do
   visit '/'
 end
 
@@ -62,4 +62,11 @@ end
 
 Then(/^the movingAverage1 of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
   expect(Bot.find_by_name(arg1).movingAverage1 == arg2)
+end
+
+And "I am logged in as User 1" do
+  visit "/login"
+  fill_in(:username, :with => "User 1")
+  fill_in(:password, :with => "123")
+  click_button("Login")
 end
