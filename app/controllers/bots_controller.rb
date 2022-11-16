@@ -9,6 +9,11 @@ class BotsController < ApplicationController
   end
 
   def create
+    currentUserID = session[:user_id]
+    currentUsername = User.find(currentUserID).username
+
+    bot_params[:username] = currentUsername
+
     @bot = Bot.create!(bot_params)
     flash[:notice] = "#{@bot.name} was successfully created."
     redirect_to bots_path
@@ -34,7 +39,7 @@ class BotsController < ApplicationController
 
   private
   def bot_params
-    params.require(:bot).permit(:name, :movingAverage1, :movingAverage2, :short)
+    params.require(:bot).permit(:name, :ema, :bb, :rsi, :sma, :macd, :sar, :vwap, :symbol, :short)
   end
 end
 

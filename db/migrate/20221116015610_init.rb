@@ -1,8 +1,8 @@
-class Initialize < ActiveRecord::Migration[7.0]
+class Init < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
       t.string :username
-      t.string :password
+      t.string :password_digest
       t.string :name
       t.timestamps
     end
@@ -22,7 +22,6 @@ class Initialize < ActiveRecord::Migration[7.0]
       t.string :symbol
     end
 
-    add_index :bots, :username, unique: true
     add_index :users, :username, unique: true
 
     add_foreign_key :bots, :users, column: :username, primary_key: :username

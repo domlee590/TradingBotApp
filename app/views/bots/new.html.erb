@@ -27,10 +27,22 @@
 <%= form_tag bots_path, class: 'form' do %>
   <%= label :bot, :name, 'Bot Name', class: 'col-form-label' %>
   <%= text_field :bot, :name, class: 'form-control' %>
-  <%= label :bot, :movingAverage1, 'Moving Average 1', class: 'col-form-label' %>
-  <%= text_field :bot, :movingAverage1, class: 'form-control' %>
-  <%= label :bot, :movingAverage2, 'Moving Average 2', class: 'col-form-label' %>
-  <%= text_field :bot, :movingAverage2, class: 'form-control' %>
+  <%= label :bot, :ema, 'EMA', class: 'col-form-label' %>
+  <%= text_field :bot, :ema, class: 'form-control' %>
+  <%= label :bot, :bb, 'BB', class: 'col-form-label' %>
+  <%= text_field :bot, :bb, class: 'form-control' %>
+  <%= label :bot, :rsi, 'RSI', class: 'col-form-label' %>
+  <%= text_field :bot, :rsi, class: 'form-control' %>
+  <%= label :bot, :sma, 'SMA', class: 'col-form-label' %>
+  <%= text_field :bot, :sma, class: 'form-control' %>
+  <%= label :bot, :macd, 'MACD', class: 'col-form-label' %>
+  <%= text_field :bot, :macd, class: 'form-control' %>
+  <%= label :bot, :sar, 'SAR', class: 'col-form-label' %>
+  <%= text_field :bot, :sar, class: 'form-control' %>
+  <%= label :bot, :vwap, 'VWAP', class: 'col-form-label' %>
+  <%= text_field :bot, :vwap, class: 'form-control' %>
+  <%= label :bot, :symbol, 'Symbol', class: 'col-form-label' %>
+  <%= text_field :bot, :symbol, class: 'form-control' %>
   <%= label :bot, :short, 'Short', class: 'col-form-label' %>
   <%= select :bot, :short, %w[true false], {}, { class: 'form-control col-1'} %>
   <br/>
