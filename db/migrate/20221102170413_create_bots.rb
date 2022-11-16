@@ -7,5 +7,6 @@ class CreateBots < ActiveRecord::Migration[7.0]
       t.boolean :short
       t.timestamps
     end
+
   end
 end
