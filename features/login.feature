@@ -18,7 +18,7 @@ Feature: login
     Then I should be on the page "Login"
 
   Scenario: enter credentials and login
-    Given I am on the page "Login"
+    Given I am on the page Login
     And I fill in "username" with "User 1"
     And I fill in "password" with "123"
     And I press "Login"

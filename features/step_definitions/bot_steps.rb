@@ -4,6 +4,7 @@ end
 
 And(/^I press "([^"]*)"$/) do |arg|
   click_button(arg)
+  puts(page.title)
 end
 
 
@@ -15,8 +16,12 @@ Then('I should be on the page {string}') do |string|
   expect(page).to have_title(string)
 end
 
-Given('I am on the page {string}') do |string|
+Given('I am on the page Login') do
   visit "/login"
+end
+
+Given('I am on the page Sign Up') do
+  visit new_user_path
 end
 
 When ('I go to the edit page for Bot 1') do
