@@ -19,7 +19,7 @@
         <%= link_to 'Home', root_path, class: 'nav-link'%>
         <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
         <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
-        <%= link_to 'Logout', '/logout', class: 'nav-link' %>
+        <div style="padding-left: 1000px;"><%= link_to 'Logout', '/logout', class: 'nav-link' %></div>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
 <%= form_tag bots_path, class: 'form' do %>
   <%= label :bot, :name, '*Bot Name', class: 'col-form-label' %>
   <%= text_field :bot, :name, class: 'form-control', :required => true, :placeholder => "Enter a creative bot name here" %>
-  <%= link_to 'EMA', "investopedia.com/terms/e/ema.asp", class: 'col-form-label', :title => "Click here for more information on EMA"%>
+  <%= link_to 'EMA', "https://www.investopedia.com/terms/e/ema.asp", class: 'col-form-label', :title => "Click here for more information on EMA"%>
   <%= text_field :bot, :ema, class: 'form-control', :placeholder => "Enter a whole number for the length value", :title => "Click here for more information on EMA: " %>
   <%= link_to 'BB', "https://academy.binance.com/en/articles/bollinger-bands-explained", class: 'col-form-label', :title => "Click here for more information on BB"%>
   <%= text_field :bot, :bb, class: 'form-control', :placeholder => "Enter a whole number for length of Bollinger Band"%>
