@@ -16,6 +16,10 @@ Feature: delete a bot
       | Bot 1       | User 1        |
       | Bot 2       | User 4        |
 
+    And the following bot_outputs exist
+      | bot_id | pnl |
+      | Bot 1  | 100 |
+
     And I am logged in as User 1
 
   Scenario: delete existing bot

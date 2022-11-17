@@ -48,6 +48,13 @@ Given /the following users exist/ do |user_table|
   end
 end
 
+Given /the following bot_outputs exist/ do |bot_output_table|
+  bot_output_table.hashes.each do |bot_output|
+    bot_output[:bot_id] = Bot.find_by_name(bot_output[:bot_id]).id
+    BotOutput.create bot_output
+  end
+end
+
 When(/^I select "([^"]*)" from "([^"]*)"$/) do |arg1, arg2|
   select(arg1, :from => arg2)
 end
