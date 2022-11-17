@@ -31,3 +31,4 @@ Feature: login
     And I fill in "password" with "12345"
     And I press "Login"
     Then I should be on the page "Login"
+    And I should see "Invalid username or password"

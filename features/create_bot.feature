@@ -19,9 +19,9 @@ Feature: create a bot
   Scenario: create a bot
     Given I am on the page Create Bot
     And I fill in "Bot Name" with "My Bot"
-    And I fill in "Symbol" with "10"
-    And I fill in "EMA" with "5"
-    And I select "true" from "Short"
+    And I select "ethusdt" from "bot_symbol"
+    And I fill in "bot_ema" with "5"
+    And I select "true" from "bot_short"
     And I press "Save Changes"
     Then I should be on the page "Your Bots"
     And I should see "My Bot"

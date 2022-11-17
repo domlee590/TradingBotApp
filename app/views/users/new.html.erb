@@ -33,6 +33,9 @@
         </div>
         <div class="card-body">
           <h1>Sign Up</h1>
+          <% if !flash[:error].nil? %>
+            <div class="alert alert-danger", style = "text-align: center"><%= flash[:error] %></div>
+          <%end%>
           <%= form_for @user do |f|%>
             <%= f.label :username%><br>
             <%= f.text_field :username%><br>
