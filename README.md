@@ -20,6 +20,13 @@ The PNL is updated in real time every one minute, just refresh your page to see 
 The Win Rate and Trade Count get updated when a trade is closed.
 If you don't like your bot, you can just delete it and create a new one.
 
+The Python script is currently configured to run exclusively on the Replit platform while 
+connected to the Heroku database. It can be configured to run on any platform as long
+as the modules are properly installed and the database credentials are updated to 
+whatever the app itself is using. For example if you are using a local database and 
+running the script locally, you will need to update the database credentials to match your localhost.
+
+
 (3) Links
 
 1. [Heroku](https://comsw4152-trading-bot-app.herokuapp.com/)
@@ -31,7 +38,8 @@ We had to use python for this project to be able to use the python-binance libra
 You can checkout the python script that is running 24/7 on a server in the github repo above.
 This script is what enables us to update the PNL, win rate and trade count.
 There is a constant communication between our web app, our database and our python script.
-Ruby App <-> PostgresSql <-> Python script
+Ruby App <-> Postgres Database on Heroku <-> Python script. The Heroku database credentials are apparently subject to change, 
+therefore the Python script must be updated periodically with the new credentials.
 
 We aim to add the backtesting functionality for the Youtube videos for the Final Submission as well as minor improvements
 such as adding a change password functionality and more flexibility in the bot configuration.
