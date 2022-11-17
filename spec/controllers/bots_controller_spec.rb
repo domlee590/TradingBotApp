@@ -25,4 +25,13 @@ describe BotsController do
     end
   end
 
+  describe 'destroy' do
+    it 'should delete the bot' do
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true")
+      BotOutput.create(bot_id: bot.id, pnl: 10)
+      expect {delete :destroy, params: {format: bot.id}
+      }.to change { Bot.count }.by(-1)
+    end
+  end
+
 end
