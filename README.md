@@ -21,8 +21,8 @@ The Win Rate and Trade Count get updated when a trade is closed.
 If you don't like your bot, you can just delete it and create a new one.
 
 The Python script is currently configured to run exclusively on the Replit platform while 
-connected to the Heroku database. It can be configured to run on any platform as long
-as the modules are properly installed and the database credentials are updated to 
+connected to the Heroku database. IT IS LOCATED IN /lib/assets/python/paperTradingIter2.py, VIEW IF YOU WISH.
+It can be configured to run on any platform as long as the modules are properly installed and the database credentials are updated to 
 whatever the app itself is using. For example if you are using a local database and 
 running the script locally, you will need to update the database credentials to match your localhost.
 
