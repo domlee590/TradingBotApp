@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <div class="navbar-brand">CrypTerminator</div>
+    <div class="navbar-brand">Crypterminator</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,29 +25,29 @@
   </div>
 </nav>
 <h2>Create a new bot here:</h2>
-<b>In this form, Bot name and Symbol are required.</b>
-Recommended: *Only input 3 of the technical indicators from EMA to VWAP*
+<i>Recommended: *Input at most 3 of the technical indicators from EMA to Short*</i> <br>
+<i>Click the indicator name for more information</i>
 <%= form_tag bots_path, class: 'form' do %>
-  <%= label :bot, :name, 'Bot Name', class: 'col-form-label' %>
-  <%= text_field :bot, :name, class: 'form-control', :required => true%>
-  <%= label :bot, :ema, 'EMA', class: 'col-form-label' %>
-  <%= text_field :bot, :ema, class: 'form-control' %>
-  <%= label :bot, :bb, 'BB', class: 'col-form-label' %>
-  <%= text_field :bot, :bb, class: 'form-control' %>
-  <%= label :bot, :rsi, 'RSI', class: 'col-form-label' %>
-  <%= text_field :bot, :rsi, class: 'form-control' %>
-  <%= label :bot, :sma, 'SMA', class: 'col-form-label' %>
-  <%= text_field :bot, :sma, class: 'form-control' %>
-  <%= label :bot, :macd, 'MACD', class: 'col-form-label' %>
-  <%= text_field :bot, :macd, class: 'form-control' %>
-  <%= label :bot, :sar, 'SAR', class: 'col-form-label' %>
-  <%= text_field :bot, :sar, class: 'form-control' %>
-  <%= label :bot, :vwap, 'VWAP', class: 'col-form-label' %>
-  <%= text_field :bot, :vwap, class: 'form-control' %>
-  <%= label :bot, :symbol, 'Symbol', class: 'col-form-label', :required => true%>
-  <%= text_field :bot, :symbol, class: 'form-control' %>
-  <%= label :bot, :short, 'Short', class: 'col-form-label' %>
-  <%= select :bot, :short, %w[true false], {}, { class: 'form-control col-1'} %>
+  <%= label :bot, :name, '*Bot Name', class: 'col-form-label' %>
+  <%= text_field :bot, :name, class: 'form-control', :required => true, :placeholder => "Enter a creative bot name here" %>
+  <%= link_to 'EMA', "investopedia.com/terms/e/ema.asp", class: 'col-form-label', :title => "Click here for more information on EMA"%>
+  <%= text_field :bot, :ema, class: 'form-control', :placeholder => "Enter a whole number for the length value", :title => "Click here for more information on EMA: " %>
+  <%= link_to 'BB', "https://academy.binance.com/en/articles/bollinger-bands-explained", class: 'col-form-label', :title => "Click here for more information on BB"%>
+  <%= text_field :bot, :bb, class: 'form-control', :placeholder => "Enter a whole number for length of Bollinger Band"%>
+  <%= link_to 'SMA', "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma#:~:text=Simple%20Moving%20Average%20(SMA)&text=Moving%20averages%20are%20one%20of,price%20over%20the%20specified%20period.", class: 'col-form-label', :title => "Click here for more information on SMA"%>
+  <%= text_field :bot, :sma, class: 'form-control', :placeholder => "Enter a whole number for the length value of Simple Moving Average" %>
+  <%= link_to 'VWAP', "https://www.investopedia.com/terms/v/vwap.asp#:~:text=The%20volume%2Dweighted%20average%20price%20(VWAP)%20is%20a%20technical,on%20both%20volume%20and%20price.", class: 'col-form-label', :title => "Click here for more information on VWAP"%>
+  <%= text_field :bot, :vwap, class: 'form-control', :placeholder => "Enter a whole number for the length value" %>
+  <%= link_to 'SAR', "https://www.investopedia.com/trading/introduction-to-parabolic-sar/", class: 'col-form-label', :title => "Click here for more information on SAR"%>
+  <%= select :bot, :sar, %w[false true], {}, { class: 'form-control col-1'} %>
+  <%= link_to 'MACD', "https://www.investopedia.com/terms/m/macd.asp", class: 'col-form-label', :title => "Click here for more information on MACD"%>
+  <%= select :bot, :macd, %w[false true], {}, { class: 'form-control col-1'} %>
+  <%= link_to 'RSI', "https://www.investopedia.com/terms/r/rsi.asp", class: 'col-form-label', :title => "Click here for more information on RSI"%>
+  <%= select :bot, :rsi, %w[false true], {}, { class: 'form-control col-1'} %>
+  <%= link_to 'Short', "https://www.investopedia.com/terms/s/short.asp", class: 'col-form-label', :title => "Click here for more information on Short"%>
+  <%= select :bot, :short, %w[false true], {}, { class: 'form-control col-1'} %>
+  <%= link_to 'Symbol', "https://www.nerdwallet.com/article/investing/solana-vs-ethereum", class: 'col-form-label', :title => "Click here for more information on Etherium vs Solana"%>
+  <%= select :bot, :symbol, %w[ethusdt solusdt btcusdt], {}, { class: 'form-control col-1'} %>
   <br/>
   <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', bots_path, class: 'btn btn-secondary' %>
