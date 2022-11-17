@@ -8,33 +8,94 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <div class="navbar-brand">Navbar</div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <%= link_to 'Home', root_path, class: 'nav-link'%>
-        <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
-        <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
-        <%= link_to 'Logout', '/logout', class: 'nav-link' %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-brand">CrypTerminator</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <%= link_to 'Home', root_path, class: 'nav-link'%>
+          <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
+          <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
+          <%= link_to 'Logout', '/logout', class: 'nav-link' %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+      <div>
+        <div class="card" style="width: 27rem;">
+          <div class="card">
+            <div class="card-body">
+              <h1>Attributes</h1>
+                <table class="table table-striped col-md-12" id="bot_output">
+                  <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                  </tr>
+
+                  <% @bot.attributes.each do |key, value| %>
+                    <tr>
+                      <td><%= key %></td>
+                      <% if !value.nil? %>
+                        <td><%= value %></td>
+                      <% else %>
+                        <td>Not applicable</td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+      <div>
+        <div class="card" style="width: 27rem;">
+          <div class="card">
+            <div class="card-body">
+              <h1>Outputs</h1>
+              <table class="table table-striped col-md-12" id="bot_output">
+
+                <% if @bot_output.nil? %>
+                    <p>There are no outputs for this bot yet</p>
+                <% else %>
+                  <tr>
+                    <th>Output</th>
+                    <th>Value</th>
+                  </tr>
+
+                  <% @bot_output.attributes.each do |key, value| %>
+                    <tr>
+                      <td><%= key %></td>
+                      <% if !value.nil? %>
+                        <td><%= value %></td>
+                      <% else %>
+                        <td>Not applicable</td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                <% end %>
+
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</nav>
-<ul id="details">
-  <li>
-    Name:
-    <%= @bot.name %>
-  </li>
-  <li>
-    Created At:
-    <%= @bot.created_at %>
-  </li>
-</ul>
 
-<div class="row">
-  <%= link_to 'Back to bot list', bots_path, class: 'btn btn-primary col-2' %>
-</div>
+  <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+    <%= link_to 'Back to bot list', bots_path, class: 'btn btn-primary col-3' %>
+    <button onClick="window.location.reload();" class="btn btn-secondary col-2">Refresh Page</button>
+  </div>
+
+  </div>
+
+</body>
+</html>

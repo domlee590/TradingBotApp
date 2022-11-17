@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <div class="navbar-brand">Navbar</div>
+    <div class="navbar-brand">CrypTerminator</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +26,7 @@
 </nav>
 <h2>Your current bot configurations:</h2>
 
-<table class="table table-striped col-md-12" id="movies">
+<table class="table table-striped col-md-12" id="bots">
   <thead>
   <tr>
     <th>Bot Name</th>
@@ -50,4 +50,5 @@
   <% end %>
   </tbody>
 </table>
+
 <%= link_to 'Add new bot configuration', new_bot_path, class: 'btn btn-primary' %>
