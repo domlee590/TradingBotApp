@@ -68,6 +68,7 @@ Then(/^the movingAverage1 of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
   expect(Bot.find_by_name(arg1).movingAverage1 == arg2)
 end
 
+
 And "I am logged in as User 1" do
   visit "/login"
   fill_in(:username, :with => "User 1")

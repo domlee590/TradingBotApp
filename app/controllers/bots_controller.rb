@@ -23,11 +23,10 @@ class BotsController < ApplicationController
     redirect_to bots_path
   end
 
-
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @bot = Bot.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    id = params[:id] # retrieve bot ID from URI route
+    @bot = Bot.find(id) # look up bot by unique ID
+    @bot_output = BotOutput.where(bot_id: id).first
   end
 
   private
