@@ -24,7 +24,7 @@
     </div>
   </div>
 </nav>
-<h2>Your current bot configurations:</h2>
+<h2><%= current_user.username %>'s bot configurations:</h2>
 <% if !flash[:notice].nil? %>
   <div class="alert alert-danger", style = "text-align: center"><%= flash[:notice] %></div>
 <%end%>

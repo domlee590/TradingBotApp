@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 describe BotsController do
-  describe 'POST /login' do
-    it 'should login' do
-      post
+  describe 'GET index' do
+    it 'should render the index template' do
+      user = User.create(id: 5, username: "User 1", password: "123")
+      get(:index, session: {'user_id' => 5})
       expect(response).to render_template('index')
     end
   end
 
   describe 'POST #create' do
     it 'creates a new bot' do
-      expect {post :create, params: {bot: {name: "Bobby", ema: 9, bb: 60,  short: "true"}}
+      user = User.create(id: 5, username: "User 1", password: "123")
+      expect {post :create, params: {bot: {name: "Bobby", ema: 9, bb: 60,  short: "true"}, session: {'user_id' => 5}}
       }.to change { Bot.count }.by(1)
     end
   end

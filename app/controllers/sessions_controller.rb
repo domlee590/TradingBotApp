@@ -14,8 +14,6 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
   end
-  def page_requires_login
-  end
 
   def logout
     session[:user_id] = nil

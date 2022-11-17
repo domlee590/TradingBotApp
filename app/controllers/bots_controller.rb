@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-
+  skip_before_action :authorized
   def new
     # default: render 'new' template
   end

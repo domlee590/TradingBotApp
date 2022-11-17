@@ -37,7 +37,7 @@
         <h2>No-Code Trading Bot Platform</h2><br>
         <div>
           <% if logged_in? %>
-            <h2>You are logged in, <%= current_user.username %></h2>
+            <h2>Hey <%= current_user.username %>!</h2>
             <%= link_to 'View Your Bots', bots_path, :class => 'btn btn-primary' %>
           <% else %>
             <%= button_to "Login", '/login', method: :get, :class => 'btn btn-primary'%><br>
