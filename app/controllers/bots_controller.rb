@@ -31,6 +31,8 @@ class BotsController < ApplicationController
 
   def destroy
     @bot = Bot.find(params[:format])
+    @bot_output = BotOutput.where(bot_id: params[:format]).first
+    @bot_output.destroy
     @bot.destroy
     flash[:notice] = "Bot '#{@bot.name}' deleted."
     redirect_to bots_path
