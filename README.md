@@ -1,18 +1,24 @@
-# README
-
-README with 
-
-(1) the names and UNIs of all team members
-
-1. Erik Hansen (eh2889), 
-2. Dominic Lee (dal2193), 
+(1) Team members
+1. Erik Hansen (eh2889),
+2. Dominic Lee (dal2193),
 3. Harold Castiaux (hjc2154)
 
-(2) instructions to run and test your product.
+(2) Instructions
 
-To run the app, simply start the rails server in the root directory of the project. You must have a properly configured Ruby on Rails environment to run the app, as well as a Postgres database (please connect to your IDE or environment), and have run rake db:migrate.
-The app will be available at localhost:3000.
-To test, create a bot configuration and check if the bot is able to be seen in the list of bots, which can be done by clicking on the "Your Bots" link in the navigation bar.
+Go ahead and sign up if you haven't created an account or login if you have.
+Once you are logged in you will see all the bots you have created already.
+If you don't see any bot, go ahead and create a new bot.
+Input all the values you want your bot to take into consideration.
+(it is recommended but not required to not input too many technical indicators for the performance of your bot.)
+Don't forget to give it a name
+Once the bot is created go ahead and click on more details to see its settings as well as its current performance.
+Three indicators are used to keep track of your bot's performance:
+- PNL (Profit net loss) in %: The higher the better!
+- Win Rate: What fraction of the trades did your bot won (value between 0 and 1)
+- Trade Count: The amount of trades your bot has done
+The PNL is updated in real time every one minute, just refresh your page to see the updated amount.
+The Win Rate and Trade Count get updated when a trade is closed.
+If you don't like your bot, you can just delete it and create a new one.
 
 (3) Links
 
@@ -21,22 +27,11 @@ To test, create a bot configuration and check if the bot is able to be seen in t
 
 (4) Additional comments
 
-PLEASE view the current rough draft for the bot implementation, which has been created in Python (FIND IN lib/assets/python) . The intention is to convert this to Ruby eventually and integrate it more with the rest of the app. It is a proof of concept.
+We had to use python for this project to be able to use the python-binance library that is not extensively developed on ruby.
+You can checkout the python script that is running 24/7 on a server in the github repo above.
+This script is what enables us to update the PNL, win rate and trade count.
+There is a constant communication between our web app, our database and our python script.
+Ruby App <-> PostgresSql <-> Python script
 
-We tried to integrate the output in the following way, but couldn't get it working in time:
-
-class BotRunController < ApplicationController
-
-  def show
-    name = "bob"
-    ma1 = 1
-    ma2 = 48
-    short = "yes"
-
-    @ins = name + " " + ma1.to_s + " " + ma2.to_s + " " + short
-    @out = `python lib/assets/python/paperTrading.py "#{@ins}"`
-
-  end
-end
-
-This would render in a view. This will likely be working next iteration.
+We aim to add the backtesting functionality for the Youtube videos for the Final Submission as well as minor improvements
+such as adding a change password functionality and more flexibility in the bot configuration.
