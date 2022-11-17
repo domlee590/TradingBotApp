@@ -39,14 +39,16 @@
                   </tr>
 
                   <% @bot.attributes.each do |key, value| %>
-                    <tr>
-                      <td><%= key %></td>
-                      <% if !value.nil? %>
+                    <% unless %w[username id updated_at].include? key %>
+                      <tr>
+                        <td><%=  key  %></td>
+                        <%  if !value.nil? %>
                         <td><%= value %></td>
-                      <% else %>
-                        <td>Not applicable</td>
-                      <% end %>
-                    </tr>
+                        <%  else  %>
+                        <td>N/A</td>
+                        <%  end  %>
+                      </tr>
+                    <% end %>
                   <% end %>
                 </table>
             </div>

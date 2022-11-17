@@ -28,3 +28,5 @@ Feature: create a bot
     And I click "More Details"
     Then I should be on the page "View Bot"
     And I should see "My Bot"
+    And the ema of "My Bot" should be "5"
+

@@ -9,17 +9,20 @@ Feature: view your bots
     Given the following users exist:
       | username    | password |
       | User 1      | 123      |
+      | User 4      | 234      |
 
     And the following bots exist:
-        | name        | user_id  |
-        | Bot 1       | 1        |
-        | Bot 2       | 2        |
+        | name        | username  |
+        | Bot 1       | User 1        |
+        | Bot 2       | User 4        |
+
+    And I am logged in as User 1
 
   Scenario: get to view your bots page
     Given I am on the TradingBotApp home page
     And I click "View Your Bots"
     Then I should be on the page "Your Bots"
-    And I should see /'Bot 1'/
-    And I should not see /'Bot 2'/
+    And I should see "Bot 1"
+    And I should not see "Bot 2"
 
 

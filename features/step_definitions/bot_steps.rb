@@ -60,12 +60,16 @@ Then /^I should see "([^"]*)"$/ do |text|
   expect(page).to have_content(text)
 end
 
+Then /^I should not see "([^"]*)"$/ do |text|
+  expect(page).to_not have_content(text)
+end
+
 Given /I am on the page Create Bot/ do
   visit new_bot_path
 end
 
-Then(/^the movingAverage1 of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
-  expect(Bot.find_by_name(arg1).movingAverage1 == arg2)
+And(/^the ema of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
+  expect(Bot.find_by_name(arg1).ema == arg2)
 end
 
 
