@@ -28,8 +28,8 @@ Given('I am on the page Sign Up') do
   visit new_user_path
 end
 
-When ('I go to the edit page for Bot 1') do
-  visit edit_bot_path(Bot.find_by_name("Bot 1"))
+When ('I go to the details page for Bot 1') do
+  visit bot_path(Bot.find_by_name("Bot 1"))
 end
 
 And ('I should be on the view page for Bot 1') do

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe BotsController do
-  describe 'GET index' do
-    it 'should render the index template' do
-      get :index
+  describe 'POST /login' do
+    it 'should login' do
+      post
       expect(response).to render_template('index')
     end
   end

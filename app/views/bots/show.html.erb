@@ -94,6 +94,8 @@
 
   <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
     <%= link_to 'Back to bot list', bots_path, class: 'btn btn-primary col-3' %>
+    <%= link_to 'Delete', bots_destroy_path(@bot), :method => :delete, data: {:confirm => "You sure?" } ,
+                :title => "Delete #{@bot.name}", :class => 'btn btn-danger col-2', :name => "delete"%>
     <button onClick="window.location.reload();" class="btn btn-secondary col-2">Refresh Page</button>
   </div>
 

@@ -19,7 +19,7 @@ class BotsController < ApplicationController
     data[:username] = currentUsername
 
     @bot = Bot.create!(data)
-    flash[:notice] = "#{@bot.name} was successfully created."
+    flash[:alert] = "#{@bot.name} was successfully created."
     redirect_to bots_path
   end
 
@@ -27,6 +27,13 @@ class BotsController < ApplicationController
     id = params[:id] # retrieve bot ID from URI route
     @bot = Bot.find(id) # look up bot by unique ID
     @bot_output = BotOutput.where(bot_id: id).first
+  end
+
+  def destroy
+    @bot = Bot.find(params[:format])
+    @bot.destroy
+    flash[:notice] = "Bot '#{@bot.name}' deleted."
+    redirect_to bots_path
   end
 
   private

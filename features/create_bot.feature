@@ -24,9 +24,6 @@ Feature: create a bot
     And I select "true" from "bot_short"
     And I press "Save Changes"
     Then I should be on the page "Your Bots"
+    And I should see "My Bot was successfully created."
     And I should see "My Bot"
-    And I click "More Details"
-    Then I should be on the page "View Bot"
-    And I should see "My Bot"
-    And the ema of "My Bot" should be "5"
 
