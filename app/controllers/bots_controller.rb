@@ -19,13 +19,19 @@ class BotsController < ApplicationController
     data[:username] = currentUsername
 
     @bot = Bot.create!(data)
-    flash[:alert] = "#{@bot.name} was successfully created."
+    flash[:notice] = "#{@bot.name} was successfully created."
     redirect_to bots_path
   end
 
   def show
     id = params[:id] # retrieve bot ID from URI route
     @bot = Bot.find(id) # look up bot by unique ID
+
+    if @bot.username != User.find(session[:user_id]).username
+      flash[:alert] = "Cannot view this bot as #{User.find(session[:user_id]).username}"
+      redirect_to bots_path
+    end
+
     @bot_output = BotOutput.where(bot_id: id).first
   end
 
