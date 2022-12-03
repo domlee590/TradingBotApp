@@ -30,22 +30,28 @@ class BotsController < ApplicationController
     if @bot.username != User.find(session[:user_id]).username
       flash[:alert] = "Cannot view this bot as #{User.find(session[:user_id]).username}"
       redirect_to bots_path
+    else
+      @bot_output = BotOutput.where(bot_id: id).first
     end
-
-    @bot_output = BotOutput.where(bot_id: id).first
   end
 
   def destroy
     @bot = Bot.find(params[:format])
-    @bot_output = BotOutput.where(bot_id: params[:format]).first
 
-    unless @bot_output.nil?
-      @bot_output.destroy
+    if @bot.username != User.find(session[:user_id]).username
+      flash[:alert] = "Cannot delete this bot as #{User.find(session[:user_id]).username}"
+      redirect_to bots_path
+    else
+      @bot_output = BotOutput.where(bot_id: params[:format]).first
+
+      unless @bot_output.nil?
+        @bot_output.destroy
+      end
+
+      @bot.destroy
+      flash[:notice] = "Bot '#{@bot.name}' deleted."
+      redirect_to bots_path
     end
-
-    @bot.destroy
-    flash[:notice] = "Bot '#{@bot.name}' deleted."
-    redirect_to bots_path
   end
 
   private
