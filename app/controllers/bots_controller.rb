@@ -59,10 +59,10 @@ class BotsController < ApplicationController
         flash[:alert] = "Cannot delete this bot as #{User.find(session[:user_id]).username}"
         redirect_to bots_path
       else
-        @bot_output = BotOut.where(bot_id: params[:format]).last
+        @bot_output = BotOut.where(bot_id: params[:format])
 
         unless @bot_output.nil?
-          @bot_output.destroy
+          @bot_output.destroy_all
         end
 
         @bot.destroy
