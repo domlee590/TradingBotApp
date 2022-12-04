@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'edus/index'
   get 'edus/backtest'
   get 'edus/stoptest'
+  get 'edus/copybot'
   resources :edus
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
