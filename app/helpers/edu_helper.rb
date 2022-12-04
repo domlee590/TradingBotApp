@@ -1,0 +1,2 @@
+module EduHelper
+end

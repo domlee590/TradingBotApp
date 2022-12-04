@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'bots/show'
   resources :bots
 
+  get 'edus/show'
+  get 'edus/index'
+  resources :edus
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
