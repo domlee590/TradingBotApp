@@ -57,40 +57,60 @@
     </div>
 
     <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-      <div>
-        <div class="card" style="width: 27rem;">
-          <div class="card">
-            <div class="card-body">
-              <h1>Outputs</h1>
-              <table class="table table-striped col-md-12" id="bot_output">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div>
+              <div class="card" style="width: 27rem;">
+                <div class="card">
+                  <div class="card-body">
+                    <h1>Profit Net Loss</h1>
+                    <table class="table table-striped col-md-12" id="bot_output">
 
-                <% if @bot_output.nil? %>
-                    <p>There are no outputs for this bot yet</p>
-                <% else %>
-                  <tr>
-                    <th>Output</th>
-                    <th>Value</th>
-                  </tr>
+                      <%= line_chart @chart_data_pnl, label: "PNL", ytitle: "PNL"%>
 
-                  <% @bot_output.attributes.each do |key, value| %>
-                    <tr>
-                      <td><%= key %></td>
-                      <% if !value.nil? %>
-                        <td><%= value %></td>
-                      <% else %>
-                        <td>Not applicable</td>
-                      <% end %>
-                    </tr>
-                  <% end %>
-                <% end %>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 27rem;">
+              <div class="card">
+                <div class="card-body">
+                  <h1>Win Rate</h1>
+                  <table class="table table-striped col-md-12" id="bot_output">
 
-                <%= line_chart @chart_data %>
+                    <%= line_chart @chart_data_wr, label: "WR", ytitle: "WR"%>
 
-              </table>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+            <div>
+              <div class="card" style="width: 27rem;">
+                <div class="card">
+                  <div class="card-body">
+                    <h1>Trade Count</h1>
+                    <table class="table table-striped col-md-12" id="bot_output">
+
+                      <%= line_chart @chart_data_tc, label: "TC", ytitle: "TC", height: "200px"%>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
