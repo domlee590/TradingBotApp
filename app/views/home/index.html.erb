@@ -39,6 +39,7 @@
           <% if logged_in? %>
             <h2>Hey <%= current_user.username %>!</h2>
             <%= link_to 'View Your Bots', bots_path, :class => 'btn btn-primary' %>
+            <%= link_to 'Learn From the Pros', edus_path, :class => 'btn btn-primary' %>
           <% else %>
             <%= button_to "Login", '/login', method: :get, :class => 'btn btn-primary'%><br>
             <%= button_to "Sign Up", '/users/new', method: :get, :class => 'btn btn-primary'%>

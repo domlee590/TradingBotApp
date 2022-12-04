@@ -35,9 +35,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_190306) do
     t.integer "sma"
     t.integer "vwap"
     t.string "symbol"
-    t.boolean "rsi"
     t.boolean "macd"
     t.boolean "sar"
+    t.boolean "rsi"
+  end
+
+  create_table "edu_outs", force: :cascade do |t|
+    t.integer "edu_id"
+    t.integer "time"
+    t.float "pnl"
+    t.float "wr"
+    t.integer "tc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "edus", force: :cascade do |t|
+    t.string "channel"
+    t.string "youtube_id"
+    t.string "link"
+    t.string "description"
+    t.string "name"
+    t.string "username"
+    t.boolean "short"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "ema"
+    t.integer "bb"
+    t.integer "sma"
+    t.integer "vwap"
+    t.string "symbol"
+    t.boolean "macd"
+    t.boolean "sar"
+    t.boolean "rsi"
+    t.boolean "run"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,4 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_190306) do
 
   add_foreign_key "bot_outs", "bots"
   add_foreign_key "bots", "users", column: "username", primary_key: "username"
+  add_foreign_key "edu_outs", "edus"
 end
