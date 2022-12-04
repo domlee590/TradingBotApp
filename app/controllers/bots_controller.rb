@@ -32,8 +32,19 @@ class BotsController < ApplicationController
       redirect_to bots_path
     else
       @bot_output = BotOut.where(bot_id: id).last
-      @chart_data = [["2021-01-01", 2], ["2021-01-02", 3]] #PLACEHOLDER
+
+      bot_output_raw = BotOut.where(bot_id: id)
+
+      @chart_data_pnl = []
+      @chart_data_wr = []
+      @chart_data_tc = []
+      bot_output_raw.each do |bot_output|
+        @chart_data_pnl << [bot_output.created_at, bot_output.pnl]
+        @chart_data_wr << [bot_output.created_at, bot_output.wr]
+        @chart_data_tc << [bot_output.created_at, bot_output.tc]
+      end
     end
+
   end
 
   def destroy
