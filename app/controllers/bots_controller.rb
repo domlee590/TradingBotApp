@@ -32,7 +32,8 @@ class BotsController < ApplicationController
         flash[:alert] = "Cannot view this bot as #{User.find(session[:user_id]).username}"
         redirect_to bots_path
       else
-        @bot_output = BotOutput.where(bot_id: id).first
+        @bot_output = BotOut.where(bot_id: id).last
+        @chart_data = [["2021-01-01", 2], ["2021-01-02", 3]] #PLACEHOLDER
       end
     else
       redirect_to root_path
@@ -47,7 +48,7 @@ class BotsController < ApplicationController
         flash[:alert] = "Cannot delete this bot as #{User.find(session[:user_id]).username}"
         redirect_to bots_path
       else
-        @bot_output = BotOutput.where(bot_id: params[:format]).first
+        @bot_output = BotOut.where(bot_id: params[:format]).last
 
         unless @bot_output.nil?
           @bot_output.destroy
