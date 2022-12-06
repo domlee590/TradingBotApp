@@ -18,7 +18,26 @@ class CreateTriggerBotOutsInsert < ActiveRecord::Migration[7.0]
           RETURN NULL;
         END;
         $$;
+
+        CREATE OR REPLACE FUNCTION fix_edu_outs()
+        RETURNS TRIGGER
+        LANGUAGE plpgsql
+        AS
+        $$
+        BEGIN
+          IF NEW.time > 50 THEN
+            DELETE FROM edu_outs
+            WHERE time = NEW.time - 50 AND edu_id = NEW.edu_id;
+          END IF;
+          RETURN NULL;
+        END;
+        $$;
         
+        CREATE TRIGGER fix_edu_outs
+        AFTER INSERT ON edu_outs
+        FOR EACH ROW
+        EXECUTE PROCEDURE fix_edu_outs();
+
         CREATE TRIGGER fix_bot_outs
         AFTER INSERT ON bot_outs
         FOR EACH ROW

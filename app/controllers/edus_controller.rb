@@ -14,9 +14,9 @@ class EdusController < ApplicationController
     @chart_data_wr = []
     @chart_data_tc = []
     edu_output_raw.each do |edu_output|
-      @chart_data_pnl << [edu_output.created_at, edu_output.pnl]
-      @chart_data_wr << [edu_output.created_at, edu_output.wr]
-      @chart_data_tc << [edu_output.created_at, edu_output.tc]
+      @chart_data_pnl << [edu_output.time, edu_output.pnl]
+      @chart_data_wr << [edu_output.time, edu_output.wr]
+      @chart_data_tc << [edu_output.time, edu_output.tc]
     end
   end
 
