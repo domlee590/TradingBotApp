@@ -42,7 +42,7 @@
           <% @edu.attributes.each do |key, value| %>
             <% unless %w[description username id updated_at youtube_id channel link created_at].include? key %>
               <tr>
-                <%  if !value.nil? %>
+                <% if !value.nil? and key != "run" %>
                   <td><%=  key  %></td>
                     <td><%= value %></td>
                 <%  end  %>
