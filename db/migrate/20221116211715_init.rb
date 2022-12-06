@@ -63,5 +63,8 @@ class Init < ActiveRecord::Migration[7.0]
     add_foreign_key :bots, :users, column: :username, primary_key: :username
     add_foreign_key :edu_outs, :edus, column: :edu_id, primary_key: :id
     add_foreign_key :bot_outs, :bots, column: :bot_id, primary_key: :id
+    add_index :bot_outs, :time, unique: true
+    add_index :edu_outs, :time, unique: true
+
   end
 end

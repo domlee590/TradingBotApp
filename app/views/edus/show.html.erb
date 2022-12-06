@@ -56,9 +56,9 @@
 </div>
 
 <% if @edu.run %>
-  <%= link_to 'Stop BackTest', edus_stoptest_path(@edu), class: 'btn btn-primary'%>
+    <%= link_to 'Stop BackTest', edus_stoptest_path(@edu), class: 'btn btn-primary'%>
 <% else %>
-  <%= link_to 'BackTest this bot', edus_backtest_path(@edu), class: 'btn btn-primary' %>
+  <%= link_to 'BackTest This Bot', edus_backtest_path(@edu), class: 'btn btn-primary' %>
 <% end %>
 <%= link_to 'Copy Bot Configuration', edus_copybot_path(@edu), class: 'btn btn-primary' %>
 </div>
