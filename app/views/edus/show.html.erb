@@ -26,27 +26,47 @@
 </nav>
 <div class = "row" style="padding-top: 15px">
 <div class="col-md-4 justify-content-center">
-<iframe src='https://www.youtube.com/embed/<% @edu.youtube_id %>?enablejsapi=1&amp;autoplay=1' frameborder='0' allowfullscreen height="280"
+<iframe src='https://www.youtube.com/embed/Timx3-EEqzs?enablejsapi=1&amp;autoplay=1' frameborder='0' allowfullscreen height="280"
         width="498" ></iframe>
-<p><% @edu.description %></p>
+<p>If you are a beginner in crypto trading, here is a simple way you can make $100 a day easily, by trading bitcoin. here is one insanely easy exponential moving average ( ema ) strategy that you can use over and over and over again to profit on any type of cryptocurrency you wish to trade.
+  This is my most used trading strategy that does not require much thinking or anything crazy do to with technical analysis, so if this strategy helped you, please</p>
 <div>
   <div class="card" style="width: 27rem;">
     <div class="card">
       <div class="card-body">
-        <h1><% @edu.channel %></h1>
+        <h1>Coin Theorist</h1>
         <table class="table table-striped col-md-12" id="bot_output">
           <tr>
             <th>Attribute</th>
             <th>Value</th>
           </tr>
-          <% @edu.attributes.each do |key, value| %>
-            <% unless %w[description username id updated_at youtube_id channel link created_at].include? key %>
-              <tr>
-                <%  if !value.nil? %>
-                  <td><%=  key  %></td>
-                    <td><%= value %></td>
-                <%  end  %>
-              </tr>
+          <% if @edu.id == 1 %>
+            <tr>
+              <td>Ema 1</td>
+                <td>9</td>
+            </tr>
+            <tr>
+              <td>Ema 2</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>Ema 3</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>Ema 4</td>
+              <td>55</td>
+            </tr>
+          <% else %>
+            <% @edu.attributes.each do |key, value| %>
+              <% unless %w[description username id updated_at youtube_id channel link created_at].include? key %>
+                <tr>
+                  <%  if !value.nil? %>
+                    <td><%=  key  %></td>
+                      <td><%= value %></td>
+                  <%  end  %>
+                </tr>
+              <% end %>
             <% end %>
           <% end %>
         </table>
@@ -60,7 +80,6 @@
 <% else %>
   <%= link_to 'BackTest this bot', edus_backtest_path(@edu), class: 'btn btn-primary' %>
 <% end %>
-<%= link_to 'Copy Bot Configuration', edus_copybot_path(@edu), class: 'btn btn-primary' %>
 </div>
 <% if @edu.run %>
     <div class="col-md-8" style="padding-left: 50px">
@@ -98,15 +117,15 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-            <div>
+          <div class="h-100 d-flex align-items-center" style="backdrop-filter: blur(5px);">
+            <div class="align-items-center">
               <div class="card" style="width: 27rem;">
                 <div class="card">
                   <div class="card-body">
                     <h1>Trade Count</h1>
                     <table class="table table-striped col-md-12" id="bot_output">
 
-                      <%= line_chart @chart_data_tc, label: "TC", ytitle: "TC", height: "200px"%>
+                      <%= line_chart @chart_data_tc, label: "TC", ytitle: "TC", height: "200px" %>
 
                     </table>
                   </div>
