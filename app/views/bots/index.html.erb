@@ -24,7 +24,7 @@
     </div>
   </div>
 </nav>
-<h2><%= current_user.username %>'s bot configurations:</h2>
+<h2><%= current_user.username %>'s Bot Configurations:</h2>
 <% if !flash[:notice].nil? %>
   <div class="alert alert-success", style = "text-align: center"><%= flash[:notice] %></div>
 <%end%>
@@ -57,4 +57,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Add new bot configuration', new_bot_path, class: 'btn btn-primary' %>
+<%= link_to 'Add New Bot Configuration', new_bot_path, class: 'btn btn-primary' %>

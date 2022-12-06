@@ -32,8 +32,6 @@ class BotsController < ApplicationController
         flash[:alert] = "Cannot view this bot as #{User.find(session[:user_id]).username}"
         redirect_to bots_path
       else
-        @bot_output = BotOut.where(bot_id: id).last
-
         bot_output_raw = BotOut.where(bot_id: id)
 
         @chart_data_pnl = []
