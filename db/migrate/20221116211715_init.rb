@@ -47,7 +47,6 @@ class Init < ActiveRecord::Migration[7.0]
       t.float :pnl
       t.float :wr
       t.integer :tc
-      t.timestamps
     end
 
     create_table :bot_outs do |t|
