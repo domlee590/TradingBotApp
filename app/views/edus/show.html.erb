@@ -55,14 +55,21 @@
   </div>
 </div>
 
-<% if @edu.run %>
-    <%= link_to 'Stop BackTest', edus_stoptest_path(@edu), class: 'btn btn-primary'%>
-<% else %>
-  <%= link_to 'BackTest This Bot', edus_backtest_path(@edu), class: 'btn btn-primary' %>
-<% end %>
-<%= link_to 'Copy Bot Configuration', edus_copybot_path(@edu), class: 'btn btn-primary' %>
+
+
+  <% if @run == 'T' %>
+      <%= link_to 'Reset BackTest', edus_show_path(:id => @edu, :fetch => false), class: 'btn btn-primary'%>
+  <% else %>
+      <%= link_to 'Fetch BackTest for This Bot', edus_show_path(:id => @edu, :fetch => true), class: 'btn btn-primary' %>
+  <% end %>
+
+
+  <%= link_to 'Copy Bot Configuration', edus_copybot_path(@edu), class: 'btn btn-primary' %>
+
+
+
 </div>
-<% if @edu.run %>
+<% if @run == 'T' %>
     <div class="col-md-8" style="padding-left: 50px">
       <div class="row">
         <div class="col">

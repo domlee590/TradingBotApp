@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_195241) do
     t.float "wr"
     t.integer "tc"
     t.datetime "created_at", null: false
+    t.index ["time"], name: "index_bot_outs_on_time", unique: true
   end
 
   create_table "bots", force: :cascade do |t|
@@ -45,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_195241) do
     t.float "pnl"
     t.float "wr"
     t.integer "tc"
-    t.datetime "created_at", null: false
+    t.index ["time"], name: "index_edu_outs_on_time", unique: true
   end
 
   create_table "edus", force: :cascade do |t|
