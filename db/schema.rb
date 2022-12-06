@@ -29,7 +29,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_195241) do
     t.boolean "short"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "ema"
+    t.integer "ema1"
+    t.integer "ema2"
+    t.integer "ema3"
+    t.integer "ema4"
     t.integer "bb"
     t.integer "sma"
     t.integer "vwap"
@@ -58,7 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_195241) do
     t.boolean "short"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "ema"
+    t.integer "ema1"
+    t.integer "ema2"
+    t.integer "ema3"
+    t.integer "ema4"
     t.integer "bb"
     t.integer "sma"
     t.integer "vwap"

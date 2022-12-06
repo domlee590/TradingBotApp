@@ -11,7 +11,10 @@ class Init < ActiveRecord::Migration[7.0]
       t.string :username
       t.boolean :short
       t.timestamps
-      t.integer :ema
+      t.integer :ema1
+      t.integer :ema2
+      t.integer :ema3
+      t.integer :ema4
       t.integer :bb
       t.integer :sma
       t.integer :vwap
@@ -30,7 +33,10 @@ class Init < ActiveRecord::Migration[7.0]
       t.string :username
       t.boolean :short
       t.timestamps
-      t.integer :ema
+      t.integer :ema1
+      t.integer :ema2
+      t.integer :ema3
+      t.integer :ema4
       t.integer :bb
       t.integer :sma
       t.integer :vwap
