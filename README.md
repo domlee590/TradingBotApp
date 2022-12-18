@@ -13,7 +13,7 @@ Input all the values you want your bot to take into consideration.
 Don't forget to give it a name
 Once the bot is created go ahead and click on more details to see its settings as well as its current performance.
 Three indicators are used to keep track of your bot's performance:
-- PNL (Profit net loss) in %: The higher the better!
+- PNL (Profit net loss) in %: The higher the better.
 - Win Rate: What fraction of the trades did your bot won (value between 0 and 1)
 - Trade Count: The amount of trades your bot has done
 The PNL is updated in real time every one minute, just refresh your page to see the updated amount.
