@@ -4,6 +4,11 @@ class EdusController < ApplicationController
   end
 
   def show
+
+    if params[:fetch] == "true"
+      @run = "T"
+    end
+
     id = params[:id] # retrieve bot ID from URI route
     @edu = Edu.find(id) # look up bot by unique ID
     @edu_output = EduOut.where(edu_id: id).last
