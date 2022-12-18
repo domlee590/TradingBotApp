@@ -22,12 +22,19 @@ class EdusController < ApplicationController
 
   def backtest
     id = params[:format]
-    Edu.update(id, :run => true)
+    @edu = Edu.find(id)
+    @run = true
+    puts @run
+    redirect_to edu_path(@edu)
   end
 
   def stoptest
     id = params[:format]
-    Edu.update(id, :run => false)
+    @edu = Edu.find(id)
+    @run = false
+    puts @run
+    redirect_to edu_path(@edu)
+
   end
 
   def copybot
@@ -45,6 +52,8 @@ class EdusController < ApplicationController
     data.delete("description")
     data.delete("run")
     data.delete("id")
+    data.delete("updated_at")
+    data.delete("created_at")
 
     @bot = Bot.create!(data)
     flash[:notice] = "#{@bot.name} was successfully created."
