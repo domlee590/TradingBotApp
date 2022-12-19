@@ -25,16 +25,6 @@ class EdusController < ApplicationController
     end
   end
 
-  def backtest
-    id = params[:format]
-    Edu.update(id, :run => true)
-  end
-
-  def stoptest
-    id = params[:format]
-    Edu.update(id, :run => false)
-  end
-
   def copybot
     currentUserID = session[:user_id]
     currentUsername = User.find(currentUserID).username

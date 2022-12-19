@@ -159,16 +159,68 @@
           1,
           1,
           1,
-          7,
+          11,
           null,
           1,
-          7,
+          11,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/edus_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          2,
+          1,
+          null,
+          null,
+          2,
+          2,
+          2,
+          null,
+          2,
+          null,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
           1,
+          1,
           null,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -249,6 +301,18 @@
           null
         ]
       },
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/edu.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/edu_out.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/domlee590/Documents/Projects/TradingBotApp/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
@@ -273,88 +337,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/domlee590/Documents/Projects/TradingBotApp/app/controllers/edus_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/edu.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/domlee590/Documents/Projects/TradingBotApp/app/models/edu_out.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1671417645
+    "timestamp": 1671418764
   }
 }
