@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_19_044437) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_190306) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,13 +21,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_044437) do
     t.float "wr"
     t.integer "tc"
     t.integer "status", default: 0
-    t.float "pre_pnl", default: 0
+    t.float "pre_pnl", default: 0.0
     t.integer "won", default: 0
-    t.float "balance", default: 100
-    t.float "amount_traded", default: 0
-    t.float "traded_qty", default: 0
-    t.float "entry_price", default: 0
+    t.float "balance", default: 100.0
+    t.float "amount_traded", default: 0.0
+    t.float "traded_qty", default: 0.0
+    t.float "entry_price", default: 0.0
     t.datetime "created_at", null: false
+    t.index ["bot_id", "time"], name: "index_bot_outs_on_bot_id_and_time", unique: true
     t.index ["time"], name: "index_bot_outs_on_time", unique: true
   end
 
@@ -53,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_044437) do
     t.float "pnl"
     t.float "wr"
     t.integer "tc"
-    t.index ["time"], name: "index_edu_outs_on_time", unique: true
+    t.index ["edu_id", "time"], name: "index_edu_outs_on_edu_id_and_time", unique: true
   end
 
   create_table "edus", force: :cascade do |t|
