@@ -40,7 +40,7 @@
   <div class="card" style="width: 30rem">
     <iframe src='https://www.youtube.com/embed/<%= @edu.youtube_id %>' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="card-body">
-      <h5 class="card-title">Selected Example</h5>
+      <h5 class="card-title"><%= @edu.channel %> Example</h5>
       <p class="card-text"><%= @edu.description %></p>
     </div>
   </div>
@@ -55,9 +55,9 @@
             <th>Value</th>
           </tr>
           <% @edu.attributes.each do |key, value| %>
-            <% if %w[bb, vwap, sar, rsi, macd, ema, short, symbol, sma].include? key %>
+            <% if %w[bb vwap sar rsi macd ema short symbol sma].include? key %>
               <tr>
-                <%  if !value.nil? %>
+                <% if !value.nil? %>
                   <td><%=  key  %></td>
                   <td><%= value %></td>
                 <%  end  %>
