@@ -13,7 +13,7 @@ Feature: create a bot
 
   Scenario: get to create a bot page
     Given I am on the page Your Bots
-    And I click "Add new bot configuration"
+    And I click "Add New Bot Configuration"
     Then I should be on the page "Create Bot"
 
   Scenario: create a bot
