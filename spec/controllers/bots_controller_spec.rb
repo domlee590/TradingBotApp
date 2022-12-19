@@ -18,20 +18,30 @@ describe BotsController do
   end
 
   describe 'show' do
-    it 'should render the show template' do
+    it 'should redirect to home if not logged in' do
       bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true")
       get :show, params: {id: bot.id}
+      expect(response).to redirect_to(root_path)
+    end
+    it 'should render the show template if logged in' do
+      user = User.create(id: 5, username: "User 1", password: "123")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: "User 1")
+      get :show, params: {id: bot.id}, session: {'user_id' => user.id}
       expect(response).to render_template('show')
     end
   end
 
   describe 'destroy' do
-    it 'should delete the bot' do
-      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true")
-      BotOutput.create(bot_id: bot.id, pnl: 10)
-      expect {delete :destroy, params: {format: bot.id}
-      }.to change { Bot.count }.by(-1)
+    it 'should delete the bot if correct user is logged in' do
+      user = User.create(id: 5, username: "User 1", password: "123")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: "User 1")
+      expect {delete :destroy, params: {format: bot.id}, session: {'user_id' => user.id}}.to change { Bot.count }.by(-1)
+    end
+    it 'should not delete the bot if incorrect user is logged in' do
+      userX = User.create(id: 1, username: "User X", password: "123")
+      userY = User.create(id: 2, username: "User Y", password: "123")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: "User X")
+      expect {delete :destroy, params: {format: bot.id}, session: {'user_id' => userY.id}}.to change { Bot.count }.by(0)
     end
   end
-
 end
