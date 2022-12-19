@@ -57,4 +57,27 @@ describe BotsController do
       expect(response).to redirect_to(root_path)
     end
   end
+
+  describe 'edit' do
+    it 'should redirect to home if not logged in' do
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true")
+      get :edit, params: {format: bot.id}
+      expect(response).to redirect_to(root_path)
+    end
+    it 'should redirect to bot page if logged in as wrong user to protect updates' do
+      userCorrect = User.create(id: 5, username: "UserC", password: "123")
+      userWrong = User.create(id: 6, username: "UserW", password: "123")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: userCorrect.username)
+      get :edit, params: {format: bot.id}, session: {'user_id' => userWrong.id}
+      expect(response).to redirect_to(bots_path)
+    end
+  end
+
+  describe 'update' do
+    it 'should update a bot with new params' do
+      user = User.create(id: 5, username: "User 1", password: "123")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: user.username)
+      put :update, params: {format: bot.id, bot: {name: "Bobby2", ema: 9, bb: 60,  short: "true"}}, session: {'user_id' => user.id}
+    end
+  end
 end
