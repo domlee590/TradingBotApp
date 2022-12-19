@@ -48,7 +48,7 @@ describe BotsController do
     it 'should not delete the bot if incorrect user is logged in' do
       userX = User.create(id: 1, username: "User X", password: "123")
       userY = User.create(id: 2, username: "User Y", password: "123")
-      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: "User X")
+      bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true", username: userX.username)
       expect {delete :destroy, params: {format: bot.id}, session: {'user_id' => userY.id}}.to change { Bot.count }.by(0)
     end
     it 'should redirect to root if no user is logged in' do
