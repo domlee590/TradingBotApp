@@ -26,6 +26,17 @@ Feature: view a bots details and output
     And I should see "Bot 1"
     And the ema of "Bot 1" should be "5"
 
+  Scenario: logged in as wrong user
+    Given I am logged in as User 4
+    And I go to the details page for Bot 1
+    Then I should be on the page "Your Bots"
+
+  Scenario: logged out
+    Given I am logged out
+    And I go to the details page for Bot 1
+    Then I should be on the page "Home"
+
+
 
 
 

@@ -40,6 +40,10 @@ When ('I go to the details page for Bot 1') do
   visit bot_path(Bot.find_by_name("Bot 1"))
 end
 
+When ('I go to the edit page for Bot 1') do
+  visit bots_edit_path(Bot.find_by_name("Bot 1"))
+end
+
 And ('I am on the details page for Coin Theorist') do
   visit edu_path(Edu.find_by_name("Coin Theorist"))
 end
@@ -119,6 +123,13 @@ And "I am logged in as User 1" do
   click_button("Login")
 end
 
+And "I am logged in as User 4" do
+  visit "/login"
+  fill_in(:username, :with => "User 4")
+  fill_in(:password, :with => "234")
+  click_button("Login")
+end
+
 And "I am logged out" do
-  click_button("Logout")
+  visit logout_path
 end

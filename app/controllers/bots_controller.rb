@@ -51,44 +51,34 @@ class BotsController < ApplicationController
 
   def edit
     @bot = Bot.find(params[:format])
-  end
-
-  def update
-    @bot = Bot.find(params[:format])
-
     if logged_in?
       if @bot.username != User.find(session[:user_id]).username
         flash[:alert] = "Cannot edit this bot as #{User.find(session[:user_id]).username}"
-        redirect_to bots_path
-      else
-        @bot.update!(bot_params)
-        flash[:notice] = "#{@bot.name} was successfully updated."
-        redirect_to bot_path(@bot)
-      end
-    end
-  end
-
-  def destroy
-    @bot = Bot.find(params[:format])
-
-    if logged_in?
-      if @bot.username != User.find(session[:user_id]).username
-        flash[:alert] = "Cannot delete this bot as #{User.find(session[:user_id]).username}"
-        redirect_to bots_path
-      else
-        @bot_output = BotOut.where(bot_id: params[:format])
-
-        unless @bot_output.nil?
-          @bot_output.destroy_all
-        end
-
-        @bot.destroy
-        flash[:notice] = "Bot '#{@bot.name}' deleted."
         redirect_to bots_path
       end
     else
       redirect_to root_path
     end
+  end
+
+  def update
+    @bot = Bot.find(params[:format])
+    @bot.update!(bot_params)
+    flash[:notice] = "#{@bot.name} was successfully updated."
+    redirect_to bot_path(@bot)
+  end
+
+  def destroy
+    @bot = Bot.find(params[:format])
+    @bot_output = BotOut.where(bot_id: params[:format])
+
+    unless @bot_output.nil?
+      @bot_output.destroy_all
+    end
+
+    @bot.destroy
+    flash[:notice] = "Bot '#{@bot.name}' deleted."
+    redirect_to bots_path
   end
 
   private

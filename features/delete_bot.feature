@@ -23,7 +23,9 @@ Feature: delete a bot
     And I am logged in as User 1
 
   Scenario: delete existing bot
+    Given I am logged in as User 1
     When I go to the details page for Bot 1
     And I click "Delete"
     Then I should be on the page "Your Bots"
     And I should see "Bot 'Bot 1' deleted."
+

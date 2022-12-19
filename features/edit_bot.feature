@@ -28,6 +28,16 @@ Feature: edit a bots details
     Then I should be on the view page for Bot 1.0
     And I should see "Bot 1.0"
 
+  Scenario: logged in as wrong user
+    Given I am logged in as User 4
+    And I go to the edit page for Bot 1
+    Then I should be on the page "Your Bots"
+
+  Scenario: logged out
+    Given I am logged out
+    And I go to the edit page for Bot 1
+    Then I should be on the page "Home"
+
 
 
 
