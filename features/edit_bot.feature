@@ -1,8 +1,8 @@
-Feature: view a bots details and output
+Feature: edit a bots details
 
   As a trader
-  So that I can learn about how my bot is acting
-  I want to view the details and outputs of my bot
+  So that I can change how my bot is acting
+  I want to edit the parameters of the bot
 
   Background: users in database
 
@@ -19,12 +19,14 @@ Feature: view a bots details and output
 
   Scenario: get to your bots details page
     Given I am logged in as User 1
-    And I am on the page Your Bots
+    And I am on the view page for Bot 1
     And I should see "Bot 1"
-    And I click "More Details"
-    Then I should be on the page "View Bot"
-    And I should see "Bot 1"
-    And the ema of "Bot 1" should be "5"
+    And I click "Edit this bot"
+    Then I should be on the page "Edit Bot"
+    And I fill in "Bot Name" with "Bot 1.0"
+    And I press "Update Bot Info"
+    Then I should be on the view page for Bot 1.0
+    And I should see "Bot 1.0"
 
 
 

@@ -25,23 +25,6 @@ class EdusController < ApplicationController
     end
   end
 
-  def backtest
-    id = params[:format]
-    @edu = Edu.find(id)
-    @run = true
-    puts @run
-    redirect_to edu_path(@edu)
-  end
-
-  def stoptest
-    id = params[:format]
-    @edu = Edu.find(id)
-    @run = false
-    puts @run
-    redirect_to edu_path(@edu)
-
-  end
-
   def copybot
     currentUserID = session[:user_id]
     currentUsername = User.find(currentUserID).username

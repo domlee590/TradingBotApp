@@ -16,6 +16,14 @@ Then('I should be on the page {string}') do |string|
   expect(page).to have_title(string)
 end
 
+And('I am on the page {string}') do |string|
+  expect(page).to have_title(string)
+end
+
+And('I am on the page Edus') do
+  visit "/edus"
+end
+
 Given('I am on the page Login') do
   visit "/login"
 end
@@ -32,13 +40,37 @@ When ('I go to the details page for Bot 1') do
   visit bot_path(Bot.find_by_name("Bot 1"))
 end
 
+And ('I am on the details page for Coin Theorist') do
+  visit edu_path(Edu.find_by_name("Coin Theorist"))
+end
+
 And ('I should be on the view page for Bot 1') do
   visit bot_path(Bot.find_by_name("Bot 1"))
+end
+
+And ('I am on the view page for Bot 1') do
+  visit bot_path(Bot.find_by_name("Bot 1"))
+end
+
+And ('I should be on the view page for Bot 1.0') do
+  visit bot_path(Bot.find_by_name("Bot 1.0"))
 end
 
 Given /the following bots exist/ do |bots_table|
   bots_table.hashes.each do |bot|
     Bot.create bot
+  end
+end
+
+Given /the following EduOuts exist/ do |edu_outs_table|
+  edu_outs_table.hashes.each do |edu_out|
+    EduOut.create edu_out
+  end
+end
+
+Given /the following edus exist/ do |edus_table|
+  edus_table.hashes.each do |edu|
+    Edu.create edu
   end
 end
 
@@ -51,7 +83,7 @@ end
 Given /the following bot_outputs exist/ do |bot_output_table|
   bot_output_table.hashes.each do |bot_output|
     bot_output[:bot_id] = Bot.find_by_name(bot_output[:bot_id]).id
-    BotOutput.create bot_output
+    BotOut.create bot_output
   end
 end
 
@@ -85,4 +117,8 @@ And "I am logged in as User 1" do
   fill_in(:username, :with => "User 1")
   fill_in(:password, :with => "123")
   click_button("Login")
+end
+
+And "I am logged out" do
+  click_button("Logout")
 end

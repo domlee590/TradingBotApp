@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'bots/new'
   get 'bots/create'
   get 'bots/edit'
-  get 'bots/update'
+  put 'bots/update'
   get 'bots/destroy'
   get 'bots/show'
   resources :bots
