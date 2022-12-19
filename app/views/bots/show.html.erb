@@ -19,7 +19,8 @@
           <%= link_to 'Home', root_path, class: 'nav-link'%>
           <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
           <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
-          <div style="padding-left: 1000px;"><%= link_to 'Logout', '/logout', class: 'nav-link' %></div>
+          <%= link_to 'Education', edus_path, class: 'nav-link'%>
+          <div style="padding-left: 900px;"><%= link_to 'Logout', '/logout', class: 'nav-link' %></div>
         </div>
       </div>
     </div>
@@ -116,6 +117,7 @@
 
   <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
     <%= link_to 'Back to Bot Catalogue', bots_path, class: 'btn btn-primary col-3' %>
+    <%= link_to 'Edit this bot', bots_edit_path(@bot), class: 'btn btn-primary col-3' %>
     <%= link_to 'Delete', bots_destroy_path(@bot), :method => :delete, data: {:confirm => "You sure?" } ,
                 :title => "Delete #{@bot.name}", :class => 'btn btn-danger col-2', :name => "delete"%>
     <button onClick="window.location.reload();" class="btn btn-secondary col-2">Refresh Page</button>

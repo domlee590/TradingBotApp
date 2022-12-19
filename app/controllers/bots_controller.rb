@@ -49,9 +49,27 @@ class BotsController < ApplicationController
 
   end
 
+  def edit
+    @bot = Bot.find(params[:format])
+    if logged_in?
+      if @bot.username != User.find(session[:user_id]).username
+        flash[:alert] = "Cannot edit this bot as #{User.find(session[:user_id]).username}"
+        redirect_to bots_path
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @bot = Bot.find(params[:format])
+    @bot.update!(bot_params)
+    flash[:notice] = "#{@bot.name} was successfully updated."
+    redirect_to bot_path(@bot)
+  end
+
   def destroy
     @bot = Bot.find(params[:format])
-
     if logged_in?
       if @bot.username != User.find(session[:user_id]).username
         flash[:alert] = "Cannot delete this bot as #{User.find(session[:user_id]).username}"
