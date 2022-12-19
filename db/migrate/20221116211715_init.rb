@@ -6,6 +6,7 @@ class Init < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
+
     create_table :bots do |t|
       t.string :name
       t.string :username
@@ -49,14 +50,20 @@ class Init < ActiveRecord::Migration[7.0]
       t.integer :tc
     end
 
-    create_table :bot_outs do |t|
-      t.integer :bot_id
-      t.integer :time
-      t.float :pnl
-      t.float :wr
-      t.integer :tc
-      t.integer :status
-      t.timestamps
+    create_table "bot_outs", force: :cascade do |t|
+      t.integer "bot_id"
+      t.integer "time"
+      t.float "pnl"
+      t.float "wr"
+      t.integer "tc"
+      t.integer "status", default: 0
+      t.float "pre_pnl", default: 0
+      t.integer "won", default: 0
+      t.float "balance", default: 100
+      t.float "amount_traded", default: 0
+      t.float "traded_qty", default: 0
+      t.float "entry_price", default: 0
+      t.datetime "created_at", null: false
     end
 
     add_index :users, :username, unique: true

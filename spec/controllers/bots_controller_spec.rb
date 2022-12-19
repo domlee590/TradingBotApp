@@ -53,7 +53,7 @@ describe BotsController do
     end
     it 'should redirect to root if no user is logged in' do
       bot = Bot.create(name: "Bobby", ema: 9, bb: 60,  short: "true")
-      delete :destroy, params: {format: bot.id}
+      delete :destroy, params: {format: bot.id}, session: {'logged_in' => false}
       expect(response).to redirect_to(root_path)
     end
   end
