@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_190306) do
     t.float "entry_price", default: 0.0
     t.datetime "created_at", null: false
     t.index ["bot_id", "time"], name: "index_bot_outs_on_bot_id_and_time", unique: true
-    t.index ["time"], name: "index_bot_outs_on_time", unique: true
   end
 
   create_table "bots", force: :cascade do |t|

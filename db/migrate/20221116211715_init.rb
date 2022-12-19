@@ -64,7 +64,6 @@ class Init < ActiveRecord::Migration[7.0]
       t.float "traded_qty", default: 0
       t.float "entry_price", default: 0
       t.datetime "created_at", null: false
-      t.index ["time"], name: "index_bot_outs_on_time", unique: true
     end
 
     add_index :users, :username, unique: true
