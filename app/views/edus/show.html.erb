@@ -54,16 +54,16 @@
             <th>Attribute</th>
             <th>Value</th>
           </tr>
-            <% @edu.attributes.each do |key, value| %>
-              <% if %w[ema1 ema2 ema3 ema4].include? key %>
-                <tr>
-                  <%  if !value.nil? %>
-                    <td><%=  key  %></td>
-                      <td><%= value %></td>
-                  <%  end  %>
-                </tr>
-              <% end %>
+          <% @edu.attributes.each do |key, value| %>
+            <% if %w[bb, vwap, sar, rsi, macd, ema, short, symbol, sma].include? key %>
+              <tr>
+                <%  if !value.nil? %>
+                  <td><%=  key  %></td>
+                  <td><%= value %></td>
+                <%  end  %>
+              </tr>
             <% end %>
+          <% end %>
         </table>
       </div>
     </div>
