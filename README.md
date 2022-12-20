@@ -9,7 +9,7 @@ Go ahead and sign up if you haven't created an account or login if you have.
 Once you are logged in you will see all the bots you have created already.
 If you don't see any bot, go ahead and create a new bot.
 Input all the values you want your bot to take into consideration.
-If you have no experience on how trading bots work, there is a youtube video demonstrating how the create bot works.
+If you have no experience on how trading bots work, there is a youtube video demonstrating how to create a bot.
 (it is recommended but not required to not input too many technical indicators for the performance of your bot.)
 Don't forget to give it a name
 Once the bot is created go ahead and click on more details to see its settings as well as its current performance.
@@ -20,7 +20,7 @@ Three indicators are used to keep track of your bot's performance:
   The PNL is updated in real time every one minute, just refresh your page to see the updated amount.
   The Win Rate and Trade Count get updated when a trade is closed.
   If you don't like your bot, you can edit it in real time.
-  There is a new graph functionality to shows you the evolution of your pnl, win rate and trade count over the last 5 trades.
+  There is a new graph functionality that shows you the evolution of your pnl, win rate and trade count over the last 5 trades.
 
 The Python scripts are currently configured to run exclusively on the Replit platform while
 connected to the Heroku database. THEY ARE LOCATED IN /lib/assets/python, VIEW IF YOU WISH.
