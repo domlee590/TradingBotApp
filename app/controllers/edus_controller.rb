@@ -44,7 +44,6 @@ class EdusController < ApplicationController
     data.delete("created_at")
 
     @bot = Bot.create!(data)
-    puts(data)
     flash[:notice] = "#{@bot.name} was successfully created."
     redirect_to bots_path
   end
