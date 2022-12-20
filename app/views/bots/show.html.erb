@@ -1,107 +1,96 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>View Bot</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <div class="navbar-brand">CrypTerminator</div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <%= link_to 'Home', root_path, class: 'nav-link'%>
-          <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
-          <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
-          <%= link_to 'Education', edus_path, class: 'nav-link'%>
-          <div style="padding-left: 900px;"><%= link_to 'Logout', '/logout', class: 'nav-link' %></div>
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>View Bot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <%= link_to 'CrypTerminator', root_path, class: 'navbar-brand'%>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if logged_in? %>
+              <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Your Bots', bots_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'New Bot', new_bot_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Education', edus_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Log Out', '/logout', class: 'nav-link' %></li>
+            <% else %>
+              <%= link_to 'Log In', '/login', class: 'nav-link' %>
+              <%= link_to 'Sign Up', '/users/new', class: 'nav-link' %>
+            <%end%>
+          </ul>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div>
-    <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-      <div>
-        <div class="card" style="width: 27rem;">
-          <div class="card">
-            <div class="card-body">
-              <h1>Attributes</h1>
-                <table class="table table-striped col-md-12" id="bot_output">
-                  <tr>
-                    <th>Attribute</th>
-                    <th>Value</th>
-                  </tr>
-
-                  <% @bot.attributes.each do |key, value| %>
-                    <% unless %w[username id updated_at].include? key %>
-                      <tr>
-                        <td><%=  key  %></td>
-                        <%  if !value.nil? %>
-                        <td><%= value %></td>
-                        <%  else  %>
-                        <td>N/A</td>
-                        <%  end  %>
-                      </tr>
-                    <% end %>
-                  <% end %>
-                </table>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div>
-              <div class="card" style="width: 27rem;">
-                <div class="card">
-                  <div class="card-body">
-                    <h1>Profit Net Loss (%)</h1>
-                    <table class="table table-striped col-md-12" id="bot_output">
-
-                      <%= line_chart @chart_data_pnl, label: "PNL", ytitle: "PNL"%>
-
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" style="width: 27rem;">
-              <div class="card">
-                <div class="card-body">
-                  <h1>Win Rate (%)</h1>
+    <br>
+    <div>
+      <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+        <div>
+          <div class="card" style="width: 27rem;">
+            <div class="card">
+              <div class="card-body">
+                <h1>Attributes</h1>
                   <table class="table table-striped col-md-12" id="bot_output">
+                    <tr>
+                      <th>Attribute</th>
+                      <th>Value</th>
+                    </tr>
 
-                    <%= line_chart @chart_data_wr, label: "WR", ytitle: "WR"%>
-
+                    <% @bot.attributes.each do |key, value| %>
+                      <% unless %w[username id updated_at].include? key %>
+                        <tr>
+                          <td><%=  key  %></td>
+                          <%  if !value.nil? %>
+                          <td><%= value %></td>
+                          <%  else  %>
+                          <td>N/A</td>
+                          <%  end  %>
+                        </tr>
+                      <% end %>
+                    <% end %>
                   </table>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div>
+                <div class="card" style="width: 27rem;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h1>Profit Net Loss (%)</h1>
+                      <table class="table table-striped col-md-12" id="bot_output">
+
+                        <%= line_chart @chart_data_pnl, label: "PNL", ytitle: "PNL"%>
+
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-            <div>
+            <div class="col">
               <div class="card" style="width: 27rem;">
                 <div class="card">
                   <div class="card-body">
-                    <h1>Trade Count</h1>
+                    <h1>Win Rate (%)</h1>
                     <table class="table table-striped col-md-12" id="bot_output">
 
-                      <%= line_chart @chart_data_tc, label: "TC", ytitle: "TC", height: "200px"%>
+                      <%= line_chart @chart_data_wr, label: "WR", ytitle: "WR"%>
 
                     </table>
                   </div>
@@ -109,21 +98,48 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col">
+              <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+              <div>
+                <div class="card" style="width: 27rem;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h1>Trade Count</h1>
+                      <table class="table table-striped col-md-12" id="bot_output">
+
+                        <%= line_chart @chart_data_tc, label: "TC", ytitle: "TC", height: "200px"%>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      </div>
     </div>
+      <br>
+    <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
+      <%= link_to 'Back to Bot Catalogue', bots_path, class: 'btn btn-primary col-3' %>
+      <%= link_to 'Edit this bot', bots_edit_path(@bot), class: 'btn btn-primary col-3' %>
+      <%= link_to 'Delete', bots_destroy_path(@bot), :method => :delete, data: {:confirm => "You sure?" } ,
+                  :title => "Delete #{@bot.name}", :class => 'btn btn-danger col-2', :name => "delete"%>
+      <button onClick="window.location.reload();" class="btn btn-secondary col-2">Refresh Page</button>
     </div>
-  </div>
+      <br>
+    </div>
+  </body>
 
-  <div class="h-100 d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);">
-    <%= link_to 'Back to Bot Catalogue', bots_path, class: 'btn btn-primary col-3' %>
-    <%= link_to 'Edit this bot', bots_edit_path(@bot), class: 'btn btn-primary col-3' %>
-    <%= link_to 'Delete', bots_destroy_path(@bot), :method => :delete, data: {:confirm => "You sure?" } ,
-                :title => "Delete #{@bot.name}", :class => 'btn btn-danger col-2', :name => "delete"%>
-    <button onClick="window.location.reload();" class="btn btn-secondary col-2">Refresh Page</button>
-  </div>
+  <footer class="py-4 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">COMSW4152 - Columbia University</p></div>
+  </footer>
 
-  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
 
-</body>
 </html>
