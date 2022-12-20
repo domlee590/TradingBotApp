@@ -1,122 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>CrypTerminator</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-<body>
-<!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container px-5">
-    <%= link_to 'CrypTerminator', root_path, class: 'navbar-brand'%>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link'%></li>
-          <li class="nav-item"><%= link_to 'Your Bots', bots_path, class: 'nav-link'%></li>
-          <li class="nav-item"><%= link_to 'New Bot', new_bot_path, class: 'nav-link'%></li>
-          <li class="nav-item"><%= link_to 'Education', edus_path, class: 'nav-link'%></li>
-          <li class="nav-item"><%= link_to 'Log Out', '/logout', class: 'nav-link' %></li>
-      <% else %>
-          <%= link_to 'Login', '/login', class: 'nav-link' %>
-          <%= link_to 'Sign Up', '/users/new', class: 'nav-link' %>
-        <%end%>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CrypTerminator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <%= link_to 'CrypTerminator', root_path, class: 'navbar-brand'%>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if logged_in? %>
+              <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link active'%></li>
+              <li class="nav-item"><%= link_to 'Your Bots', bots_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'New Bot', new_bot_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Education', edus_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Log Out', '/logout', class: 'nav-link' %></li>
+          <% else %>
+              <%= link_to 'Login', '/login', class: 'nav-link' %>
+              <%= link_to 'Sign Up', '/users/new', class: 'nav-link' %>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<!-- Page Content-->
-<div class="container px-4 px-lg-5">
-  <!-- Heading Row-->
-  <div class="row gx-4 gx-lg-5 align-items-center my-5">
-    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://imageio.forbes.com/specials-images/imageserve/927267278/Price-graph/960x0.jpg" alt="..." /></div>
-    <div class="col-lg-5">
-      <br>
-      <h1 class="font-weight-light">CrypTerminator</h1>
-      <p>The question we set out to answer in the search for our startup idea was: why do so few people find success in the world of trading with the seemingly endless amount of information available? Let's address that.</p>
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
+      <!-- Heading Row-->
+      <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://imageio.forbes.com/specials-images/imageserve/927267278/Price-graph/960x0.jpg" alt="..." /></div>
+        <div class="col-lg-5">
+          <br>
+          <h1 class="font-weight-light">CrypTerminator</h1>
+          <p>The question we set out to answer in the search for our startup idea was: why do so few people find success in the world of trading with the seemingly endless amount of information available? Let's address that.</p>
+          <% if logged_in? %>
+            <h2 class="font-weight-light">Welcome, <%= current_user.username %>!</h2>
+          <%end%>
+        </div>
+      </div>
+
+      <!-- Content Row-->
       <% if logged_in? %>
-        <h2 class="font-weight-light">Welcome, <%= current_user.username %>!</h2>
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title">Your Bots</h2>
+                <p class="card-text">CrypTerminator allows you to build a catalog of personal bots of your own design! Manage them here.</p></div>
+              <div class="card-footer"><%= link_to 'View Your Bots', bots_path, :class => 'btn btn-primary btn-md'%></div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title">Examples</h2>
+                <p class="card-text">We have curated a collection of videos from "professionals" giving advice in the trading space. Check their strategies for yourself!</p>
+              </div>
+              <div class="card-footer"><%= link_to 'Learn From the Pros', edus_path, :class => 'btn btn-primary btn-md'%></div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title">Create Bot</h2>
+                <p class="card-text">Get started with crypto trading by creating a bot yourself!</p></div>
+              <div class="card-footer"><%= link_to 'New Bot', new_bot_path, :class => 'btn btn-primary btn-md'%></div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title">Log In</h2>
+                <p class="card-text">Welcome back! Please log in to view and manage your bots.</p></div>
+              <div class="card-footer"><%= button_to "Log In", '/login', method: :get, :class => 'btn btn-primary btn-md'%></div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title">Get Started</h2>
+                <p class="card-text">Create an account now to start using CrypTerminator!</p>
+              </div>
+              <div class="card-footer"><%= button_to "Sign Up", '/users/new', method: :get, :class => 'btn btn-primary btn-md'%></div>
+            </div>
+          </div>
+        </div>
       <%end%>
-    </div>
-  </div>
 
-
-  <!-- Content Row-->
-  <% if logged_in? %>
-    <div class="row gx-4 gx-lg-5">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Your Bots</h2>
-            <p class="card-text">CrypTerminator allows you to build a catalog of personal bots of your own design! Manage them here.</p></div>
-          <div class="card-footer"><%= link_to 'View Your Bots', bots_path, :class => 'btn btn-primary btn-md'%></div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Examples</h2>
-            <p class="card-text">We have curated a collection of videos from "professionals" giving advice in the trading space. Check their strategies for yourself!</p>
-          </div>
-          <div class="card-footer"><%= link_to 'Learn From the Pros', edus_path, :class => 'btn btn-primary btn-md'%></div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Create Bot</h2>
-            <p class="card-text">Get started with crypto trading by creating a bot yourself!</p></div>
-          <div class="card-footer"><%= link_to 'New Bot', new_bot_path, :class => 'btn btn-primary btn-md'%></div>
-        </div>
+      <!-- Call to Action-->
+      <div class="card text-white bg-secondary py-2 mb-5 text-center">
+        <div class="card-body"><p class="text-white m-0">The rise of video media platforms like Youtube and TikTok has changed the way people learn about topics and develop new skills in a drastic way. These platforms have led to an unprecedented amount of information and video tutorials being accessible to anyone at the click of a button.<br>
+          'Get rich quick schemes’ have prevailed on these sites. With the development and popularity of cryptocurrency in the past few years, thousands of videos have been made to teach the average person how to trade and quickly theoretically make money.<br>
+          Many of these videos have amassed well over a million views, and teach the consumer about strategies for crypto trading, both manually and with the assistance of an automated trading bot. Any search regarding crypto trading shows the clear, widespread interest in learning about this complex topic, but very few people actually become successful traders in the long run.</p></div>
       </div>
     </div>
-  <% else %>
-    <div class="row gx-4 gx-lg-5">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Log In</h2>
-            <p class="card-text">Welcome back! Please log in to view and manage your bots.</p></div>
-          <div class="card-footer"><%= button_to "Log In", '/login', method: :get, :class => 'btn btn-primary btn-md'%></div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Get Started</h2>
-            <p class="card-text">Create an account now to start using CrypTerminator!</p>
-          </div>
-          <div class="card-footer"><%= button_to "Sign Up", '/users/new', method: :get, :class => 'btn btn-primary btn-md'%></div>
-        </div>
-      </div>
-    </div>
-  <%end%>
+  </body>
+  <!-- Footer-->
+  <footer class="py-4 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">COMSW4152 - Columbia University</p></div>
+  </footer>
 
-  <!-- Call to Action-->
-  <div class="card text-white bg-secondary py-2 mb-5 text-center">
-    <div class="card-body"><p class="text-white m-0">The rise of video media platforms like Youtube and TikTok has changed the way people learn about topics and develop new skills in a drastic way. These platforms have led to an unprecedented amount of information and video tutorials being accessible to anyone at the click of a button.<br>
-      'Get rich quick schemes’ have prevailed on these sites. With the development and popularity of cryptocurrency in the past few years, thousands of videos have been made to teach the average person how to trade and quickly theoretically make money.<br>
-      Many of these videos have amassed well over a million views, and teach the consumer about strategies for crypto trading, both manually and with the assistance of an automated trading bot. Any search regarding crypto trading shows the clear, widespread interest in learning about this complex topic, but very few people actually become successful traders in the long run.</p></div>
-  </div>
-
-</div>
-<!-- Footer-->
-<footer class="py-4 bg-dark">
-  <div class="container"><p class="m-0 text-center text-white">COMSW4152 - Columbia University</p></div>
-</footer>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-</body>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
 </html>

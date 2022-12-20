@@ -1,70 +1,111 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Create Bot</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Create Bot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <div class="navbar-brand">CrypTerminator</div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <%= link_to 'Home', root_path, class: 'nav-link'%>
-        <%= link_to 'Your Bots', bots_path, class: 'nav-link'%>
-        <%= link_to 'New Bot', new_bot_path, class: 'nav-link'%>
-        <%= link_to 'Education', edus_path, class: 'nav-link'%>
-        <div style="padding-left: 900px;"><%= link_to 'Logout', '/logout', class: 'nav-link' %></div>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-5">
+        <%= link_to 'CrypTerminator', root_path, class: 'navbar-brand'%>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if logged_in? %>
+              <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Your Bots', bots_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'New Bot', new_bot_path, class: 'nav-link active'%></li>
+              <li class="nav-item"><%= link_to 'Education', edus_path, class: 'nav-link'%></li>
+              <li class="nav-item"><%= link_to 'Log Out', '/logout', class: 'nav-link' %></li>
+            <% else %>
+              <%= link_to 'Login', '/login', class: 'nav-link' %>
+              <%= link_to 'Sign Up', '/users/new', class: 'nav-link' %>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container px-4 px-lg-5 mt-4">
+
+      <div class="card">
+
+        <div class="card-header">
+          <div class="d-flex justify-content-center">
+            <h2 class="font-weight-light">Create a Bot</h2>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card text-white bg-secondary text-center">
+                <div class="card-body"><p class="text-white m-0">
+                  <i>Recommended: Provide values for at most 3 of the technical indicators from EMA to Short</i> <br>
+                  <i>Click the indicator name for more information</i>
+                </p>
+                </div>
+              </div>
+              <%= form_tag bots_path, class: 'form' do %>
+                <%= label :bot, :name, '*Bot Name', class: 'col-form-label' %>
+                <%= text_field :bot, :name, class: 'form-control', :required => true, :placeholder => "Enter a creative bot name here" %>
+                <%= link_to 'EMA', "https://www.investopedia.com/terms/e/ema.asp", class: 'col-form-label', :title => "Click here for more information on EMA"%>
+                <%= text_field :bot, :ema, class: 'form-control', :placeholder => "Enter a whole number for the length value", :title => "Click here for more information on EMA: " %>
+                <%= link_to 'BB', "https://academy.binance.com/en/articles/bollinger-bands-explained", class: 'col-form-label', :title => "Click here for more information on BB"%>
+                <%= text_field :bot, :bb, class: 'form-control', :placeholder => "Enter a whole number for length of Bollinger Band"%>
+                <%= link_to 'SMA', "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma#:~:text=Simple%20Moving%20Average%20(SMA)&text=Moving%20averages%20are%20one%20of,price%20over%20the%20specified%20period.", class: 'col-form-label', :title => "Click here for more information on SMA"%>
+                <%= text_field :bot, :sma, class: 'form-control', :placeholder => "Enter a whole number for the length value of Simple Moving Average" %>
+                <%= link_to 'VWAP', "https://www.investopedia.com/terms/v/vwap.asp#:~:text=The%20volume%2Dweighted%20average%20price%20(VWAP)%20is%20a%20technical,on%20both%20volume%20and%20price.", class: 'col-form-label', :title => "Click here for more information on VWAP"%>
+                <%= text_field :bot, :vwap, class: 'form-control', :placeholder => "Enter a whole number for the length value" %>
+                <%= link_to 'SAR', "https://www.investopedia.com/trading/introduction-to-parabolic-sar/", class: 'col-form-label', :title => "Click here for more information on SAR"%>
+                <%= select :bot, :sar, %w[false true], {}, { class: 'form-control col-2', style: "display: inline"} %>
+                <%= link_to 'MACD', "https://www.investopedia.com/terms/m/macd.asp", class: 'col-form-label', :title => "Click here for more information on MACD"%>
+                <%= select :bot, :macd, %w[false true], {}, { class: 'form-control col-2', style: "display: inline"} %>
+                <%= link_to 'RSI', "https://www.investopedia.com/terms/r/rsi.asp", class: 'col-form-label', :title => "Click here for more information on RSI"%>
+                <%= select :bot, :rsi, %w[false true], {}, { class: 'form-control col-2', style: "display: inline"} %><br>
+                <%= link_to 'Short', "https://www.investopedia.com/terms/s/short.asp", class: 'col-form-label', :title => "Click here for more information on Short"%>
+                <%= select :bot, :short, %w[false true], {}, { class: 'form-control col-2', style: "display: inline"} %>
+                <%= link_to 'Symbol', "https://www.nerdwallet.com/article/investing/solana-vs-ethereum", class: 'col-form-label', :title => "Click here for more information on Etherium vs Solana"%>
+                <%= select :bot, :symbol, %w[ethusdt solusdt btcusdt], {}, { class: 'form-control col-3', style: "display: inline"} %>
+                <br/>
+                <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
+                <%= link_to 'Cancel', bots_path, class: 'btn btn-secondary' %>
+              <% end %>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <!--Card Video-->
+                <iframe class = "w-100" style="height: 260px" src='https://www.youtube.com/embed/6lWDS7tz5Bs' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!--Card content-->
+                <div class="card-body">
+                  <div class="d-flex justify-content-center">
+                    <!--Title-->
+                    <h4 class="card-title">Bot Creation Example</h4>
+                    <!--Text-->
+                    <p class="card-text">A quick example of creating a bot for beginners.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-<div class="row">
-  <div class="col-md-6">
-    <h2>Create a new bot here:</h2>
-    <i>Recommended: *Input at most 3 of the technical indicators from EMA to Short*</i> <br>
-    <i>Click the indicator name for more information</i>
-    <%= form_tag bots_path, class: 'form' do %>
-      <%= label :bot, :name, '*Bot Name', class: 'col-form-label' %>
-      <%= text_field :bot, :name, class: 'form-control', :required => true, :placeholder => "Enter a creative bot name here" %>
-      <%= link_to 'EMA', "https://www.investopedia.com/terms/e/ema.asp", class: 'col-form-label', :title => "Click here for more information on EMA"%>
-      <%= text_field :bot, :ema, class: 'form-control', :placeholder => "Enter a whole number for the length value", :title => "Click here for more information on EMA: " %>
-      <%= link_to 'BB', "https://academy.binance.com/en/articles/bollinger-bands-explained", class: 'col-form-label', :title => "Click here for more information on BB"%>
-      <%= text_field :bot, :bb, class: 'form-control', :placeholder => "Enter a whole number for length of Bollinger Band"%>
-      <%= link_to 'SMA', "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma#:~:text=Simple%20Moving%20Average%20(SMA)&text=Moving%20averages%20are%20one%20of,price%20over%20the%20specified%20period.", class: 'col-form-label', :title => "Click here for more information on SMA"%>
-      <%= text_field :bot, :sma, class: 'form-control', :placeholder => "Enter a whole number for the length value of Simple Moving Average" %>
-      <%= link_to 'VWAP', "https://www.investopedia.com/terms/v/vwap.asp#:~:text=The%20volume%2Dweighted%20average%20price%20(VWAP)%20is%20a%20technical,on%20both%20volume%20and%20price.", class: 'col-form-label', :title => "Click here for more information on VWAP"%>
-      <%= text_field :bot, :vwap, class: 'form-control', :placeholder => "Enter a whole number for the length value" %>
-      <%= link_to 'SAR', "https://www.investopedia.com/trading/introduction-to-parabolic-sar/", class: 'col-form-label', :title => "Click here for more information on SAR"%>
-      <%= select :bot, :sar, %w[false true], {}, { class: 'form-control col-1'} %>
-      <%= link_to 'MACD', "https://www.investopedia.com/terms/m/macd.asp", class: 'col-form-label', :title => "Click here for more information on MACD"%>
-      <%= select :bot, :macd, %w[false true], {}, { class: 'form-control col-1'} %>
-      <%= link_to 'RSI', "https://www.investopedia.com/terms/r/rsi.asp", class: 'col-form-label', :title => "Click here for more information on RSI"%>
-      <%= select :bot, :rsi, %w[false true], {}, { class: 'form-control col-1'} %>
-      <%= link_to 'Short', "https://www.investopedia.com/terms/s/short.asp", class: 'col-form-label', :title => "Click here for more information on Short"%>
-      <%= select :bot, :short, %w[false true], {}, { class: 'form-control col-1'} %>
-      <%= link_to 'Symbol', "https://www.nerdwallet.com/article/investing/solana-vs-ethereum", class: 'col-form-label', :title => "Click here for more information on Etherium vs Solana"%>
-      <%= select :bot, :symbol, %w[ethusdt solusdt btcusdt], {}, { class: 'form-control col-1'} %>
-      <br/>
-      <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
-      <%= link_to 'Cancel', bots_path, class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <div class="card" style="height: 20rem">
-      <div class="card-body">
-        <h5 class="card-title">Bot Creation Tutorial</h5>
-        <iframe class = "w-100" style="height: 260px" src='https://www.youtube.com/embed/6lWDS7tz5Bs' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
+  </body>
+
+  <!-- Footer-->
+  <footer class="py-4 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">COMSW4152 - Columbia University</p></div>
+  </footer>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
 
 </html>
