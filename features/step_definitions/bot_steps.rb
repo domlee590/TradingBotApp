@@ -111,6 +111,10 @@ Given /I am on the page Create Bot/ do
   visit new_bot_path
 end
 
+And /I try to delete Bot 1/ do
+  visit "/bots/destroy.1"
+end
+
 And(/^the ema of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
   expect(Bot.find_by_name(arg1).ema == arg2)
 end
