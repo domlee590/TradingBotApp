@@ -19,7 +19,7 @@ Feature: sign up
     And I fill in "user_username" with "User 2"
     And I fill in "user_password" with "123"
     And I press "commit"
-    Then I should be on the page "Home"
+    Then I should be on the page "CrypTerminator"
     And I should see "User 2"
 
   Scenario: enter existing credentials and sign up

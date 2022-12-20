@@ -34,7 +34,7 @@ Feature: view a bots details and output
   Scenario: logged out
     Given I am logged out
     And I go to the details page for Bot 1
-    Then I should be on the page "Home"
+    Then I should be on the page "CrypTerminator"
 
 
 

@@ -36,7 +36,7 @@ Feature: edit a bots details
   Scenario: logged out
     Given I am logged out
     And I go to the edit page for Bot 1
-    Then I should be on the page "Home"
+    Then I should be on the page "CrypTerminator"
 
 
 
