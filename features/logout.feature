@@ -14,5 +14,5 @@ Feature: logout
 
   Scenario: logout of user
     Given I am on the TradingBotApp home page
-    And I click "Logout"
-    Then I should see "Login"
+    And I click "Log Out"
+    Then I should see "Log In"

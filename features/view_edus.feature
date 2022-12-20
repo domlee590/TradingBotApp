@@ -20,5 +20,5 @@ Feature: view your edus
   Scenario: get to view your bots page
     Given I am on the TradingBotApp home page
     And I click "Learn From the Pros"
-    Then I should be on the page "Edus"
-    And I should see "Coin Theorist"
+    Then I should be on the page "Example Bots"
+    And I should see "Example Bot Configurations"

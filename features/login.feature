@@ -14,15 +14,15 @@ Feature: login
 
   Scenario: get to login page
     Given I am on the TradingBotApp home page
-    And I click "Login"
-    Then I should be on the page "Login"
+    And I click "Log In"
+    Then I should be on the page "Log In"
 
   Scenario: enter valid credentials and login
     Given I am on the page Login
     And I fill in "username" with "User 1"
     And I fill in "password" with "123"
     And I press "Login"
-    Then I should be on the page "Home"
+    Then I should be on the page "CrypTerminator"
     And I should see "User 1"
 
   Scenario: enter invalid credentials
@@ -30,5 +30,5 @@ Feature: login
     And I fill in "username" with "User 1"
     And I fill in "password" with "12345"
     And I press "Login"
-    Then I should be on the page "Login"
+    Then I should be on the page "Log In"
     And I should see "Invalid username or password"
